@@ -98,6 +98,16 @@ body {
     color: #333;
 }
 
+/* Remove native styles from input
+ * elements. Otherwise styling would be
+ * off in mobile Safari at least.
+ */
+input {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+}
+
 .options {
     display: block;
     text-align: center;
