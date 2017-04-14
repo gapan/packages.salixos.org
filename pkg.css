@@ -36,7 +36,7 @@ body {
     display: block;
 }
 
-#logo-header {
+.logo-header {
     display: block;
 }
 
@@ -98,27 +98,27 @@ body {
     color: #333;
 }
 
-#options {
+.options {
     display: block;
     text-align: center;
     margin: 3px auto;
     width: 100%;
 }
 
-#options .edgespace {
+.options .edgespace {
     flex: auto;
 }
 
-#options .midspace {
+.options .midspace {
     flex: auto;
     max-width: 20px;
 }
 
-#options .select {
+.select {
     margin: 3px 0;
 }
 
-#options select {
+.select select {
     flex: none;
     -webkit-appearance: none; 
     -moz-appearance: none;
@@ -137,16 +137,16 @@ body {
     cursor: pointer;
 }
 
-#options div p {
+.select p {
     margin: 0;
 }
 
-#options select:hover {
+.select select:hover {
     background: url("img/selector-arrow.svg") no-repeat right white;
     color: #333;
 }
 
-#options select option {
+.select select option {
     padding: 8px;
     background-color: white;
 }
@@ -187,7 +187,7 @@ body {
         padding: 8px 16px;
     }
 
-    #options {
+    .options {
         display: flex;
         flex-direction: row;
         flex-flow: wrap;
@@ -202,13 +202,13 @@ body {
 }
 
 @media all and (max-height: 320px) {
-    #logo-header {
+    .logo-header {
         display: flex;
         flex-direction: row;
         vertical-align: middle;
     }
 
-    #logo-header .edgespace {
+    .logo-header .edgespace {
         flex: auto;
     }
 
@@ -228,7 +228,7 @@ body {
         margin: 3px;
     }
 
-    #options {
+    .options {
         margin: 3px;
     }
 }
