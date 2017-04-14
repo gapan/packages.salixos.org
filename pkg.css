@@ -1,0 +1,233 @@
+@font-face {
+  font-family: Linux Biolinum;
+  src: url("fonts/LinBiolinum_RB.otf") format("opentype");
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.logo {
+    display: block;
+    background: url("img/salix.svg");
+    margin: 0 auto;
+}
+
+#slide-search,
+#slide-browse,
+#slide-details {
+    width: 100vw; /* 100% of viewport width */
+    display: flex;
+    align-items: center;
+}
+
+
+#slide-search {
+    background-color: #fff;
+    height: 100vh;
+}
+
+#slide-search-items {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#logo-header {
+    display: block;
+}
+
+#slide-search-items .logo {
+    width: 75px;
+    height: 67px;
+    background-size: 75px 67px;
+    margin: 3px auto;
+}
+
+#slide-search-items .title {
+    font-family: Linux Biolinum;
+    font-size: 28px;
+    text-align: center;
+    margin: 3px 0;
+}
+
+#slide-search-items form {
+    display: block;
+}
+
+#searchbox {
+    padding: 0;
+    border: 2px solid #6c6;
+    background-color: #6c6;
+    width: 100%;
+    display: inline-flex;
+    margin: 3px 0;
+    box-sizing: border-box;
+}
+
+#searchbox #search {
+    font-size: 16px;
+    border: 0;
+    padding: 2px;
+    width: 100%;    
+}
+
+#searchbox #submit {
+    background-color: #6c6; /* Green */
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 2px solid #6c6;
+    border-right: 0;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+#searchbox #submit:hover {
+    background-color: white;
+    color: #333;
+}
+
+#options {
+    display: block;
+    text-align: center;
+    margin: 3px auto;
+    width: 100%;
+}
+
+#options .edgespace {
+    flex: auto;
+}
+
+#options .midspace {
+    flex: auto;
+    max-width: 20px;
+}
+
+#options .select {
+    margin: 3px 0;
+}
+
+#options select {
+    flex: none;
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    width: 140px;
+    height: 36px;
+    overflow: hidden;
+    background: url("img/selector-arrow.svg") no-repeat right #6c6;
+    color: white;
+    font-size: 12px;
+    padding: 2px;
+    border: 2px solid #6c6;
+    margin: 2px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+#options div p {
+    margin: 0;
+}
+
+#options select:hover {
+    background: url("img/selector-arrow.svg") no-repeat right white;
+    color: #333;
+}
+
+#options select option {
+    padding: 8px;
+    background-color: white;
+}
+
+#slide-browse {
+    background-color: #cf9;
+    min-height: 100vh;
+}
+
+#slide-details {
+    background-color: #99ffcb;
+    min-height: 100vh;
+    display: none;
+}
+
+@media all and (min-width: 600px) {
+    #slide-search-items {
+        width: 70%;     
+    }
+
+    #slide-search-items .logo {
+        width: 100px;
+        height: 90px;
+        background-size: 100px 90px;
+        margin: 6px auto;
+    }
+
+    #slide-search-items .title {
+        font-size: 36px;
+        margin: 6px 0;
+    }
+
+    #searchbox {
+        margin: 6px;
+    }
+
+    #searchbox #submit {
+        padding: 8px 16px;
+    }
+
+    #options {
+        display: flex;
+        flex-direction: row;
+        flex-flow: wrap;
+        margin: 6px;
+    }
+}
+
+@media all and (min-width: 800px) {
+    #slide-search-items {    
+        max-width: 600px;
+    }
+}
+
+@media all and (max-height: 320px) {
+    #logo-header {
+        display: flex;
+        flex-direction: row;
+        vertical-align: middle;
+    }
+
+    #logo-header .edgespace {
+        flex: auto;
+    }
+
+    #slide-search-items .logo {
+        width: 50px;
+        height: 45px;
+        background-size: 50px 45px;
+        margin: auto;
+    }
+
+    #slide-search-items .title {
+        font-size: 28px;
+        margin: 3px 0;
+    }
+
+    #searchbox {
+        margin: 3px;
+    }
+
+    #options {
+        margin: 3px;
+    }
+}

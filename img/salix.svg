@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="64px"
+   height="64px"
+   id="svg3009"
+   version="1.1"
+   inkscape:version="0.48.3 r9882"
+   sodipodi:docname="New document 2">
+  <defs
+     id="defs3011" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="7.3903505"
+     inkscape:cx="30"
+     inkscape:cy="30.851036"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:document-units="px"
+     inkscape:grid-bbox="true"
+     inkscape:window-width="1280"
+     inkscape:window-height="754"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3014">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer">
+    <path
+       style="fill:#55d400;fill-opacity:1;stroke:#66ff00;stroke-width:0.30770499px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 61.818525,2.1538506 C 40.004749,6.5603682 24.248121,-2.4325311 7.8538646,18.723458 l 53.9702094,0 c 0.10391,-4.9511 -0.203845,-10.3706036 -0.0052,-16.5696074 z M 5.4302599,24.603488 C 4.0403579,28.86636 3.0726916,33.930116 2.6229525,39.944092 l 56.0246885,0 C 60.070698,35.691339 61.065073,30.62679 61.53751,24.603488 z M 2.3558234,45.824121 c -0.088148,4.863733 -0.4519361,10.00481 0.086566,16.002658 l 0.00675,0.01937 C 22.280913,60.583336 42.790626,64.544173 56.156027,45.824146 z"
+       id="path3076-5-1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccc"
+       inkscape:export-filename="/home/ale/Desktop/Logo8.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+  </g>
+</svg>
