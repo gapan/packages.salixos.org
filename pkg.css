@@ -79,7 +79,7 @@ body {
     background-color: #6c6; /* Green */
     border: 2px solid #6c6;
     color: white;
-    padding: 8px;
+    padding: 6px 8px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -207,7 +207,7 @@ input {
     }
 
     .button {
-        padding: 8px 16px;
+        padding: 6px 16px;
     }
 
     .options {
