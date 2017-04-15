@@ -29,7 +29,9 @@ body {
     height: 100vh;
 }
 
-#slide-search-items, #slide-browse-main {
+#slide-search-items,
+#slide-browse-main,
+#slide-browse-repo {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
