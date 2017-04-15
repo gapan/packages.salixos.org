@@ -55,10 +55,6 @@ body {
     display: block;
 }
 
-.logo-header a:active, a:focus {
-    outline: none;
-}
-
 .logo {
     width: 75px;
     height: 67px;
