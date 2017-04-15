@@ -174,9 +174,8 @@ input {
     min-height: 100vh;
 }
 
-#slide-browse-main-buttons {
-    display: inline-flex;
-    align-items: last baseline;
+#slide-browse #browsebtn {
+    margin: auto 3px 5px 2px;
 }
 
 #slide-details {
