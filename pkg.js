@@ -13,3 +13,7 @@ var browseRepo = function() {
 var browseLocation = function() {
     console.log("Browse location");
 }
+
+var browsePkg = function() {
+    console.log("Browse package");
+}
