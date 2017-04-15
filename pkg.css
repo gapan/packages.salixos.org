@@ -195,7 +195,7 @@ input {
     display: block;
 }
 
-.repo {
+.item {
     display: flex;
     flex: wrap;
     background-color: #6c6;
@@ -209,19 +209,29 @@ input {
     transition-duration: 0.4s;
 }
 
-.repo:hover {
+.item:hover {
     cursor: pointer;
     background-color: white;
     color: #333;
 }
 
-.repo .name {
+.item .name {
     font-weight: bold;
     margin: 0 12px 0 0;
 }
 
-.repo .description {
+.item .version {
+    font-weight: bold;
     font-style: italic;
+}
+
+.item .release {
+    font-style: italic;
+}
+
+.item .description {
+    font-style: italic;
+    margin: auto;
 }
 
 #slide-details {
