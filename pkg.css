@@ -75,12 +75,9 @@ body {
     width: 100%;    
 }
 
-#searchbox #submit {
+.button {
     background-color: #6c6; /* Green */
-    border-top: 0;
-    border-bottom: 0;
-    border-left: 2px solid #6c6;
-    border-right: 0;
+    border: 2px solid #6c6;
     color: white;
     padding: 8px;
     text-align: center;
@@ -91,11 +88,22 @@ body {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
+    width: 140px;
+    height: 36px;
 }
 
-#searchbox #submit:hover {
+.button:hover {
     background-color: white;
     color: #333;
+}
+
+#searchbox #submit {
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 2px solid #6c6;
+    border-right: 0;
+    width: auto;
+    height: auto;
 }
 
 /* Remove native styles from input
@@ -166,6 +174,11 @@ input {
     min-height: 100vh;
 }
 
+#slide-browse-main-buttons {
+    display: inline-flex;
+    align-items: last baseline;
+}
+
 #slide-details {
     background-color: #99ffcb;
     min-height: 100vh;
@@ -193,7 +206,7 @@ input {
         margin: 6px;
     }
 
-    #searchbox #submit {
+    .button {
         padding: 8px 16px;
     }
 
