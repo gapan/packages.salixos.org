@@ -60,7 +60,41 @@
         </div>
         <div id="slide-browse">
             <div id="slide-browse-main">
-                
+                <div class="logo-header">
+                    <div class="edgespace"></div>
+                    <div class="logo"></div>
+                    <p class="title">Browse Salix Repositories</p>
+                    <div class="edgespace"></div>
+                </div>
+                <form onsubmit="browse()">
+                    <div class=options>
+                        <div class="edgespace"></div>
+                        <div class="select">
+                            <p>Version:</p>
+                            <select name="Version">
+                                /* TODO: Fill programmaticaly */
+                                <option value="14.2">14.2</option>
+                                <option value="14.1">14.1</option>
+                                <option value="14.0">14.0</option>
+                            </select>
+                        </div>
+                        <div class="midspace"></div>
+                        <div class="select">
+                            <p>Architecture:</p>
+                            <select name="arch">
+                                /* TODO: Fill programmatically */
+                                <option value="x86_64">x86_64</option>
+                                <option value="i486">i486</option>
+                            </select>
+                        </div>
+                        <div class="midspace"></div>
+                        <div id="browsebtn">
+                            <input class="button"
+                                type="submit" value="Browse">
+                        </div>
+                        <div class="edgespace"></div>
+                    </div>
+                </form>
             </div>
         </div>
         <div id="slide-details">
