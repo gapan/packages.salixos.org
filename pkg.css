@@ -215,6 +215,13 @@ input {
         flex-flow: wrap;
         margin: 6px;
     }
+
+    #slide-browse .options {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: row;
+        margin: 6px;
+    }
 }
 
 @media all and (min-width: 800px) {
