@@ -33,7 +33,8 @@ body {
 #slide-browse-main,
 #slide-browse-repo,
 #slide-browse-location,
-#slide-browse-package {
+#slide-browse-package,
+#slide-details {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -45,7 +46,8 @@ body {
  */
 #slide-browse-main,
 #slide-browse-repo,
-#slide-browse-location {
+#slide-browse-location,
+#slide-browse-package {
     display: none;
 }
 
@@ -232,12 +234,6 @@ input {
 .item .description {
     font-style: italic;
     margin: auto;
-}
-
-#slide-details {
-    background-color: #99ffcb;
-    min-height: 100vh;
-    display: none; /* TEMP */
 }
 
 @media all and (min-width: 600px) {
