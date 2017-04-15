@@ -31,7 +31,9 @@ body {
 
 #slide-search-items,
 #slide-browse-main,
-#slide-browse-repo {
+#slide-browse-repo,
+#slide-browse-location,
+#slide-browse-package {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -42,6 +44,9 @@ body {
  * are completed
  */
 #slide-browse-main {
+    display: none;
+}
+#slide-browse-repo {
     display: none;
 }
 
@@ -185,6 +190,39 @@ input {
 
 #slide-browse #browsebtn {
     margin: auto 3px 5px 2px;
+}
+
+#repo-list {
+    display: block;
+}
+
+.repo {
+    display: flex;
+    flex: wrap;
+    background-color: #6c6;
+    color: white;
+    border: 2px solid #6c6;
+    border-radius: 10px;
+    padding: 6px;
+    margin: 6px;
+    font-size: 12px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.repo:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #333;
+}
+
+.repo .name {
+    font-weight: bold;
+    margin: 0 12px 0 0;
+}
+
+.repo .description {
+    font-style: italic;
 }
 
 #slide-details {
