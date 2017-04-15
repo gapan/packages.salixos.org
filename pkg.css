@@ -38,6 +38,13 @@ body {
     display: block;
 }
 
+/* TEMP. To be removed when transitions
+ * are completed
+ */
+#slide-browse-main {
+    display: none;
+}
+
 .logo-header {
     display: block;
 }
