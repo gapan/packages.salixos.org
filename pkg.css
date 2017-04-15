@@ -43,10 +43,9 @@ body {
 /* TEMP. To be removed when transitions
  * are completed
  */
-#slide-browse-main {
-    display: none;
-}
-#slide-browse-repo {
+#slide-browse-main,
+#slide-browse-repo,
+#slide-browse-location {
     display: none;
 }
 
