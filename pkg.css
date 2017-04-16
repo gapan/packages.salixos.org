@@ -16,41 +16,28 @@ body {
     margin: 0 auto;
 }
 
-#screen-upper,
-#screen-lower {
+.screen {
     width: 100vw; /* 100% of viewport width */
     display: flex;
     align-items: center;
 }
-
 
 #screen-upper {
     background-color: #fff;
     height: 100vh;
 }
 
-#slide-search-items,
-#slide-browse-main,
-#slide-browse-repo,
-#slide-browse-location,
-#slide-browse-package,
-#slide-search-results,
-#slide-details {
+.slide {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    display: block;
+    display: none;
 }
 
-/* TEMP. To be removed when transitions
- * are completed
- */
-#slide-browse-repo,
-#slide-browse-location,
-#slide-browse-package,
-#slide-details,
-#slide-search-results {
-    display: none;
+/* These are the two slides shown by default */
+#slide-search-items,
+#slide-browse-main {
+    display: block;
 }
 
 .logo-header {
