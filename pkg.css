@@ -294,7 +294,7 @@ input {
 
 @media all and (min-width: 600px) {
     #search-items,
-    #slide-details {
+    .slide {
         width: 70%;
     }
 
@@ -335,7 +335,7 @@ input {
 
 @media all and (min-width: 800px) {
     #search-items,
-    #slide-details {
+    .slide {
         max-width: 600px;
     }
 }
