@@ -16,15 +16,15 @@ body {
     margin: 0 auto;
 }
 
-#slide-search,
-#slide-browse {
+#screen-upper,
+#screen-lower {
     width: 100vw; /* 100% of viewport width */
     display: flex;
     align-items: center;
 }
 
 
-#slide-search {
+#screen-upper {
     background-color: #fff;
     height: 100vh;
 }
@@ -185,12 +185,12 @@ input {
     background-color: white;
 }
 
-#slide-browse {
+#screen-lower {
     background-color: #cf9;
     min-height: 100vh;
 }
 
-#slide-browse #browsebtn {
+#screen-lower #browsebtn {
     margin: auto 3px 5px 2px;
 }
 
@@ -302,7 +302,7 @@ input {
         margin: 6px;
     }
 
-    #slide-browse .options {
+    #screen-lower .options {
         display: flex;
         flex-direction: row;
         flex-wrap: row;
