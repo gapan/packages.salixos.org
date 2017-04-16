@@ -5,7 +5,8 @@ var pkgSearch = function() {
     console.log("Searching for: " + terms);
     console.log("Version: " + version);
     console.log("Architecture: " + arch);
-
+    showSlide("slide-search-results");
+    document.getElementById('screen-lower').scrollIntoView();
 }
 
 /* Executed when clicking the Browse button
