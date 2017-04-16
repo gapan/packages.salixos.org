@@ -7,6 +7,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .logo {
@@ -315,6 +316,12 @@ input {
 }
 
 @media all and (max-height: 320px) {
+    /* Restore vertical scrollbar for
+     * small screens */
+    body {
+        overflow-y: auto;
+    }
+
     .logo-header {
         display: flex;
         flex-direction: row;
