@@ -28,10 +28,17 @@ var browseLocation = function() {
 }
 
 var browsePkg = function(pkgname, pkgver, pkgrel) {
+    arch = document.getElementById("browse-arch").value;
+    console.log("Browse package: " + pkgname + "-" + pkgver +
+                    "-" + arch + "-" + pkgrel);
+    showSlide("slide-browse-details");
+}
+
+var browseSearchedPkg = function(pkgname, pkgver, pkgrel) {
     arch = document.getElementById("search-arch").value;
     console.log("Browse package: " + pkgname + "-" + pkgver +
                     "-" + arch + "-" + pkgrel);
-    showSlide("slide-details");
+    showSlide("slide-search-details");
 }
 
 var viewDep = function(dep) {
