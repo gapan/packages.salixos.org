@@ -34,6 +34,7 @@ body {
     display: none;
 }
 
+
 /* These are the two shown by default */
 #search-items,
 #slide-browse-main {
@@ -257,14 +258,14 @@ input {
 }
 
 .arrow {
-    height: 40px;
-    width: 40px;
+    height: 20px;
+    width: 20px;
     bottom: 5px;
     right: 5px;
     background-color: #6c6;
     background-image: url("img/arrow.svg");
     background-repeat: no-repeat;
-    background-size: 20px;
+    background-size: 10px;
     background-position: 50% 50%;
     position: absolute;
     z-index: 10;
@@ -276,19 +277,40 @@ input {
 }
 
 .arrow:hover {
-    height: 42px;
-    width: 42px;
+    height: 22px;
+    width: 22px;
 }
 
 #up-arrow {
-    bottom: -45px;
+    bottom: -25px;
     transform: rotate(180deg);
 }
 
 .left-arrow {
-    bottom: -45px;
+    bottom: -25px;
     left: 5px;
     transform: rotate(90deg);
+}
+
+@media all and (min-width: 320px) {
+    .arrow {
+        height: 40px;
+        width: 40px;
+        background-size: 20px;
+    }
+
+    .arrow:hover {
+        height: 42px;
+        width: 42px;
+    }
+
+    #up-arrow {
+        bottom: -45px;
+    }
+
+    .left-arrow {
+        bottom: -45px;
+    }
 }
 
 @media all and (min-width: 600px) {
@@ -368,5 +390,24 @@ input {
 
     .options {
         margin: 3px;
+    }
+
+    .arrow {
+        height: 20px;
+        width: 20px;
+        background-size: 10px;
+    }
+
+    .arrow:hover {
+        height: 22px;
+        width: 22px;
+    }
+
+    #up-arrow {
+        bottom: -25px;
+    }
+
+    .left-arrow {
+        bottom: -25px;
     }
 }
