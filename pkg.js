@@ -17,3 +17,7 @@ var browseLocation = function() {
 var browsePkg = function() {
     console.log("Browse package");
 }
+
+var viewDep = function(dep) {
+    console.log("Viewing dep: " + dep);
+}
