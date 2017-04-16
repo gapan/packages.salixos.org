@@ -7,8 +7,13 @@ var pkgSearch = function() {
     console.log("Architecture: " + arch);
 }
 
+/* Executed when clicking the Browse button
+ * on the main browse page */
 var pkgBrowse = function() {
-    console.log("Browsing");
+    let fout = document.getElementById("slide-browse-main");
+    let fin = document.getElementById("slide-browse-repo");
+    fout.setAttribute("style", "display: none");
+    fin.setAttribute("style", "display: block");
 }
 
 var browseRepo = function() {
