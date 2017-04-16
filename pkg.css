@@ -225,7 +225,7 @@ input {
     margin: auto;
 }
 
-#slide-details .item {
+.slide-details .item {
     display: block;
     background-color: white;
     color: black;
@@ -233,27 +233,27 @@ input {
     margin: auto;
 }
 
-#slide-details .info {
+.slide-details .info {
     display: inline-block;
     margin-top: 6px;
     margin-bottom: 6px;
     vertical-align: top;
 }
 
-#slide-details .info .text {
+.slide-details .info .text {
     display: block;
 }
 
-#slide-details .info p {
+.slide-details .info p {
     margin: 10px;
 }
 
-#slide-details h1 {
+.slide-details h1 {
     font-size: 12px;
     margin: 10px;
 }
 
-#slide-details .info a {
+.slide-details .info a {
     margin-right: 5px;
 }
 
