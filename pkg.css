@@ -27,6 +27,7 @@ body {
     height: 100vh;
 }
 
+#search-items,
 .slide {
     max-width: 100%;
     margin-left: auto;
@@ -34,8 +35,8 @@ body {
     display: none;
 }
 
-/* These are the two slides shown by default */
-#slide-search-items,
+/* These are the two shown by default */
+#search-items,
 #slide-browse-main {
     display: block;
 }
@@ -58,7 +59,7 @@ body {
     margin: 3px 0;
 }
 
-#slide-search-items form {
+#search-items form {
     display: block;
 }
 
@@ -257,7 +258,7 @@ input {
 }
 
 @media all and (min-width: 600px) {
-    #slide-search-items,
+    #search-items,
     #slide-details {
         width: 70%;
     }
@@ -298,7 +299,7 @@ input {
 }
 
 @media all and (min-width: 800px) {
-    #slide-search-items,
+    #search-items,
     #slide-details {
         max-width: 600px;
     }
