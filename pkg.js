@@ -52,6 +52,7 @@ var showSlide = function(slide) {
         document.getElementById(slides[i].id).setAttribute("style", "display: none");
     // then show the one we want
     document.getElementById(slide).setAttribute("style", "display: block");
+    scrollToId(slide);
 }
 
 var scrollToId = function(elem) {
