@@ -45,11 +45,11 @@ body {
 /* TEMP. To be removed when transitions
  * are completed
  */
-#slide-browse-main,
 #slide-browse-repo,
 #slide-browse-location,
 #slide-browse-package,
-#slide-details {
+#slide-details,
+#slide-search-results {
     display: none;
 }
 
