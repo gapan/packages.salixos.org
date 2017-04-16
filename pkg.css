@@ -292,7 +292,7 @@ input {
     transform: rotate(90deg);
 }
 
-@media all and (min-width: 320px) {
+@media all and (min-width: 300px) {
     .arrow {
         height: 40px;
         width: 40px;
