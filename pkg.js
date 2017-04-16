@@ -6,7 +6,7 @@ var pkgSearch = function() {
     console.log("Version: " + version);
     console.log("Architecture: " + arch);
     showSlide("slide-search-results");
-    document.getElementById('screen-lower').scrollIntoView();
+    scrollTo('screen-lower');
 }
 
 /* Executed when clicking the Browse button
@@ -45,4 +45,9 @@ var showSlide = function(slide) {
         document.getElementById(slides[i].id).setAttribute("style", "display: none");
     // then show the one we want
     document.getElementById(slide).setAttribute("style", "display: block");
+}
+
+var scrollTo = function(elem) {
+    // smoothing scrolling only works in firefox
+    document.getElementById(elem).scrollIntoView({block: "start", behavior: "smooth"});
 }
