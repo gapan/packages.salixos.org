@@ -34,6 +34,7 @@ body {
 #slide-browse-repo,
 #slide-browse-location,
 #slide-browse-package,
+#slide-search-results,
 #slide-details {
     max-width: 100%;
     margin-left: auto;
@@ -47,7 +48,8 @@ body {
 #slide-browse-main,
 #slide-browse-repo,
 #slide-browse-location,
-#slide-browse-package {
+#slide-browse-package,
+#slide-details {
     display: none;
 }
 
