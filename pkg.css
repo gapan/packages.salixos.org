@@ -256,6 +256,41 @@ input {
     margin-right: 5px;
 }
 
+.arrow {
+    height: 50px;
+    width: 50px;
+    bottom: 25px;
+    right: 25px;
+    background-color: rgba(34,34,34,0.35);
+    background-image: url("img/arrow.svg");
+    background-repeat: no-repeat;
+    background-size: 24px;
+    background-position: 50% 50%;
+    position: fixed;
+    z-index: 10;
+    cursor: pointer;
+    border-radius: 100%;
+    -webkit-transition: all .15s ease-out;
+    -moz-transition: all .15s ease-out;
+    transition: all .15s ease-out;
+}
+
+.arrow:hover {
+    height: 60px;
+    width: 60px;
+}
+
+#up-arrow {
+    top: 25px;
+    transform: rotate(180deg);
+}
+
+#left-arrow {
+    top: 25px;
+    left: 25px;
+    transform: rotate(90deg);
+}
+
 @media all and (min-width: 600px) {
     #search-items,
     #slide-details {
