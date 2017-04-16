@@ -46,11 +46,11 @@
                         <div class="edgespace"></div>
                     </div>
                 </form>
-                <div id="down-arrow" class="arrow"></div>
+                <div id="down-arrow" class="arrow" onclick="scrollToId('screen-lower')"></div>
             </div>
         </div>
         <div id="screen-lower" class="screen">
-            <div id="up-arrow" class="arrow"></div>
+            <div id="up-arrow" class="arrow" onclick="scrollToId('screen-upper')"></div>
             <div id="slide-browse-main" class="slide">
                 <div class="logo-header">
                     <div class="edgespace"></div>
@@ -89,7 +89,8 @@
                 </form>
             </div>
             <div id="slide-browse-repo" class="slide">
-                <div id="left-arrow-browse-repo" class="arrow left-arrow"></div>
+                <div id="left-arrow-browse-repo" class="arrow left-arrow"
+                    onclick="showSlide('slide-browse-main')"></div>
                 <div class="logo-header">
                     <div class="edgespace"></div>
                     <p class="title">Select Repository</p>
@@ -131,7 +132,8 @@
                 </div>
             </div>
             <div id="slide-browse-location" class="slide">
-                <div id="left-arrow-browse-location" class="arrow left-arrow"></div>
+                <div id="left-arrow-browse-location" class="arrow left-arrow"
+                    onclick="showSlide('slide-browse-repo')"></div>
                 <div class="logo-header">
                     <div class="edgespace"></div>
                     <p class="title">Select Location</p>
@@ -214,7 +216,8 @@
                 </div>
             </div>
             <div id="slide-browse-package" class="slide">
-                <div id="left-arrow-browse-package" class="arrow left-arrow"></div>
+                <div id="left-arrow-browse-package" class="arrow left-arrow"
+                    onclick="showSlide('slide-browse-location')"></div>
                 <div class="logo-header">
                     <div class="edgespace"></div>
                     <p class="title">Select Package</p>
@@ -360,7 +363,8 @@
                 </div>
             </div>
             <div id="slide-details" class="slide">
-                <div id="left-arrow-details" class="arrow left-arrow"></div>
+                <div id="left-arrow-details" class="arrow left-arrow"
+                    onclick="showSlide('slide-browse-package')"></div>
                 <div class="logo-header">
                     <div class="edgespace"></div>
                     <p class="title">Package Details</p>
