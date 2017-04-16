@@ -1,5 +1,10 @@
 var pkgSearch = function() {
-    console.log("Searching");
+    terms = document.getElementById("search").value;
+    version = document.getElementById("ver").value;
+    arch = document.getElementById("arch").value;
+    console.log("Searching for: " + terms);
+    console.log("Version: " + version);
+    console.log("Architecture: " + arch);
 }
 
 var pkgBrowse = function() {

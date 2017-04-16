@@ -20,13 +20,14 @@
                     <div id="searchbox">
                         <input id="search" type="Search" 
                             placeholder="Enter search term..." autofocus>
-                        <input id="submit" class="button" type="button" value="Search" onclick="pkgSearch()">
+                        <input id="submit" class="button" type="button"
+                            value="Search" onclick="pkgSearch()">
                     </div>
                     <div class=options>
                         <div class="edgespace"></div>
                         <div class="select">
                             <p>Version:</p>
-                            <select name="ver">
+                            <select id="ver" name="ver">
                                 <!-- TODO: Fill programmatically -->
                                 <option value="14.2">14.2</option>
                                 <option value="14.1">14.1</option>
@@ -36,7 +37,7 @@
                         <div class="midspace"></div>
                         <div class="select">
                             <p>Architecture:</p>
-                            <select name="arch">
+                            <select id="arch" name="arch">
                                 <!-- TODO: Fill programmatically -->
                                 <option value="x86_64">x86_64</option>
                                 <option value="i486">i486</option>
