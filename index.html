@@ -287,7 +287,11 @@
                     <div class="edgespace"></div>
                 </div>
                 <!-- TODO: Add these programmatically -->
-                <div class="item" onclick="browsePkg()">
+                <div class="item"
+                    onclick="browsePkg(
+                        this.getElementsByClassName('name')[0].textContent,
+                        this.getElementsByClassName('version')[0].textContent,
+                        this.getElementsByClassName('release')[0].textContent)">
                     <div>
                         <p class="name">js185</p>
                         <p class="version">1.0.0</p>
@@ -297,7 +301,11 @@
                         js185 (SpiderMonkey - Mozilla's Javascript Engine)
                     </p>
                 </div>
-                <div class="item" onclick="browsePkg()">
+                <div class="item"
+                    onclick="browsePkg(
+                        this.getElementsByClassName('name')[0].textContent,
+                        this.getElementsByClassName('version')[0].textContent,
+                        this.getElementsByClassName('release')[0].textContent)">
                     <div>
                         <p class="name">mozilla-firefox</p>
                         <p class="version">45.8.0esr</p>
@@ -307,7 +315,11 @@
                         mozilla-firefox (Mozilla Firefox Web browser)
                     </p>
                 </div>
-                <div class="item" onclick="browsePkg()">
+                <div class="item"
+                    onclick="browsePkg(
+                        this.getElementsByClassName('name')[0].textContent,
+                        this.getElementsByClassName('version')[0].textContent,
+                        this.getElementsByClassName('release')[0].textContent)">
                     <div>
                         <p class="name">mozilla-firefox</p>
                         <p class="version">52.0.2esr</p>

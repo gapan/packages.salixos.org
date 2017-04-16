@@ -19,8 +19,10 @@ var browseLocation = function() {
     console.log("Browse location");
 }
 
-var browsePkg = function() {
-    console.log("Browse package");
+var browsePkg = function(pkgname, pkgver, pkgrel) {
+    arch = document.getElementById("search-arch").value;
+    console.log("Browse package: " + pkgname + "-" + pkgver +
+                    "-" + arch + "-" + pkgrel);
 }
 
 var viewDep = function(dep) {
