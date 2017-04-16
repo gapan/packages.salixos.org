@@ -257,16 +257,16 @@ input {
 }
 
 .arrow {
-    height: 50px;
-    width: 50px;
-    bottom: 25px;
-    right: 25px;
-    background-color: rgba(34,34,34,0.35);
+    height: 40px;
+    width: 40px;
+    bottom: 5px;
+    right: 5px;
+    background-color: #6c6;
     background-image: url("img/arrow.svg");
     background-repeat: no-repeat;
-    background-size: 24px;
+    background-size: 20px;
     background-position: 50% 50%;
-    position: fixed;
+    position: absolute;
     z-index: 10;
     cursor: pointer;
     border-radius: 100%;
@@ -276,18 +276,18 @@ input {
 }
 
 .arrow:hover {
-    height: 60px;
-    width: 60px;
+    height: 42px;
+    width: 42px;
 }
 
 #up-arrow {
-    top: 25px;
+    bottom: -45px;
     transform: rotate(180deg);
 }
 
-#left-arrow {
-    top: 25px;
-    left: 25px;
+.left-arrow {
+    bottom: -45px;
+    left: 5px;
     transform: rotate(90deg);
 }
 
