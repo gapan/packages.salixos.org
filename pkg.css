@@ -16,9 +16,10 @@ body {
 }
 
 .screen {
-    width: 100vw;
+    width: 100%;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 #screen-upper {
@@ -261,8 +262,6 @@ input {
 .arrow {
     height: 20px;
     width: 20px;
-    bottom: 5px;
-    right: 5px;
     background-color: #6c6;
     background-image: url("img/arrow.svg");
     background-repeat: no-repeat;
@@ -282,13 +281,19 @@ input {
     width: 22px;
 }
 
+#down-arrow {
+    bottom: 5px;
+    right: 5px;
+}
+
 #up-arrow {
-    bottom: -25px;
+    top: 5px;
+    right: 5px;
     transform: rotate(180deg);
 }
 
 .left-arrow {
-    bottom: -25px;
+    top: 5px;
     left: 5px;
     transform: rotate(90deg);
 }
@@ -303,14 +308,6 @@ input {
     .arrow:hover {
         height: 42px;
         width: 42px;
-    }
-
-    #up-arrow {
-        bottom: -45px;
-    }
-
-    .left-arrow {
-        bottom: -45px;
     }
 }
 
@@ -401,13 +398,5 @@ input {
     .arrow:hover {
         height: 22px;
         width: 22px;
-    }
-
-    #up-arrow {
-        bottom: -25px;
-    }
-
-    .left-arrow {
-        bottom: -25px;
     }
 }
