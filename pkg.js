@@ -46,9 +46,9 @@ var viewDep = function(dep) {
 }
 
 var showSlide = function(slide) {
-    let slides = document.getElementsByClassName("slide");
+    var slides = document.getElementsByClassName("slide");
     // first hide all slides
-    for (let i = 0; i < slides.length; i++)
+    for (var i = 0; i < slides.length; i++)
         document.getElementById(slides[i].id).setAttribute("style", "display: none");
     // then show the one we want
     document.getElementById(slide).setAttribute("style", "display: block");
