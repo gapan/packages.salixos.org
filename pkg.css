@@ -188,7 +188,7 @@ input {
 
 .item {
     display: flex;
-    flex: wrap;
+    flex-wrap: wrap;
     background-color: #6c6;
     color: white;
     border: 2px solid #6c6;
@@ -349,7 +349,6 @@ input {
     #screen-lower .options {
         display: flex;
         flex-direction: row;
-        flex-wrap: row;
         margin: 6px;
     }
 }
