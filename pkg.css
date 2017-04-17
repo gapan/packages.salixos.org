@@ -57,7 +57,7 @@ body {
     font-family: "Linux Biolinum";
     font-size: 28px;
     text-align: center;
-    margin: 3px 0;
+    margin: 7px 0;
 }
 
 #search-items form {
@@ -298,7 +298,7 @@ input {
     transform: rotate(90deg);
 }
 
-@media all and (min-width: 300px) {
+@media all and (min-width: 320px) {
     .arrow {
         height: 40px;
         width: 40px;
@@ -326,7 +326,6 @@ input {
 
     .title {
         font-size: 36px;
-        margin: 6px 0;
     }
 
     #searchbox {
@@ -378,7 +377,6 @@ input {
 
     .title {
         font-size: 28px;
-        margin: 3px 0;
     }
 
     #searchbox {
