@@ -195,6 +195,7 @@ input {
     border-radius: 10px;
     padding: 6px;
     margin: 6px;
+    min-height: 40px; /* easier to click on mobile */
     font-size: 12px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
