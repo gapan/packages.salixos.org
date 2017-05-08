@@ -1,0 +1,11 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": ["firefox >= 45", "ios >= 9.3"]
+      }
+    }]
+  ],
+  "plugins": ["remove-comments"],
+  "minified": "true"
+}
