@@ -1,7 +1,7 @@
 var pkgSearch = function() {
-    terms = document.getElementById("search").value;
-    version = document.getElementById("search-ver").value;
-    arch = document.getElementById("search-arch").value;
+    let terms = document.getElementById("search").value;
+    let version = document.getElementById("search-ver").value;
+    let arch = document.getElementById("search-arch").value;
     console.log("Searching for: " + terms);
     console.log("Version: " + version);
     console.log("Architecture: " + arch);
@@ -28,14 +28,14 @@ var browseLocation = function() {
 }
 
 var browsePkg = function(pkgname, pkgver, pkgrel) {
-    arch = document.getElementById("browse-arch").value;
+    let arch = document.getElementById("browse-arch").value;
     console.log("Browse package: " + pkgname + "-" + pkgver +
                     "-" + arch + "-" + pkgrel);
     showSlide("slide-browse-details");
 }
 
 var browseSearchedPkg = function(pkgname, pkgver, pkgrel) {
-    arch = document.getElementById("search-arch").value;
+    let arch = document.getElementById("search-arch").value;
     console.log("Browse package: " + pkgname + "-" + pkgver +
                     "-" + arch + "-" + pkgrel);
     showSlide("slide-search-details");
@@ -46,9 +46,9 @@ var viewDep = function(dep) {
 }
 
 var showSlide = function(slide) {
-    var slides = document.getElementsByClassName("slide");
+    let slides = document.getElementsByClassName("slide");
     // first hide all slides
-    for (var i = 0; i < slides.length; i++)
+    for (let i = 0; i < slides.length; i++)
         document.getElementById(slides[i].id).setAttribute("style", "display: none");
     // then show the one we want
     document.getElementById(slide).setAttribute("style", "display: block");
