@@ -45,7 +45,6 @@ var viewDep = function(dep) {
     console.log("Viewing dep: " + dep);
 }
 
-/* DONE
 var showSlide = function(slide) {
     let slides = document.getElementsByClassName("slide");
     // first hide all slides
@@ -60,26 +59,21 @@ var scrollToId = function(elem) {
     // smoothing scrolling only works in firefox
     document.getElementById(elem).scrollIntoView({block: "start", behavior: "smooth"});
 }
-/*
 
-/*
  * When scrolling to the top screen, first make sure the search box is
  * empty, focus it and finally scroll to the top.
  */
-/*
 var scrollUp = function() {
     document.getElementById("search").value = "";
     document.getElementById("search").focus();
     scrollToId("screen-upper");
 }
-*/
 
 /*
  * Catch the user pressing enter on the search box and act as
  * if the "Search" button was pressed instead. This way the form
  * won't reload and the screen won't scroll back up to the top.
  */
-/*
 document.getElementById("search").onkeypress=function(e){
     if(e.keyCode==13){
         document.getElementById('submit').click();
@@ -87,4 +81,3 @@ document.getElementById("search").onkeypress=function(e){
     }
     return true;
 }
-*/
