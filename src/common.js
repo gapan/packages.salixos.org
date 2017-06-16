@@ -1,8 +1,10 @@
 
-let SalixPkg = {};
+let spkg = {};
 
 // testing repo functionality
-SalixPkg.repo = new Repo(14.2, "x86_64");
+spkg.repo = new Repo(14.2, "x86_64");
+
+spkg.screen = new Screen();
 
 /*
  * Catch the user pressing enter on the search box and act as
