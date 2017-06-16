@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="pkg.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
     </head>
-    <body onload="scrollUp()">
+    <body onload="spkg.screen.scrollUp()">
         <div id="screen-upper" class="screen">
             <div id="search-items">
                 <div class="logo-header">
@@ -24,7 +24,7 @@
                         <input id="search" type="search"
                             placeholder="Enter search term..." autofocus>
                         <input id="submit" class="button" type="reset"
-                            value="Search" onclick="pkgSearch()">
+                            value="Search" onclick="spkg.Model.pkgSearch()">
                     </div>
                     <div class=options>
                         <div class="edgespace"></div>
@@ -49,11 +49,11 @@
                         <div class="edgespace"></div>
                     </div>
                 </form>
-                <div id="down-arrow" class="arrow" onclick="scrollToId('screen-lower')"></div>
+                <div id="down-arrow" class="arrow" onclick="spkg.screen.scrollToId('screen-lower')"></div>
             </div>
         </div>
         <div id="screen-lower" class="screen">
-            <div id="up-arrow" class="arrow" onclick="scrollUp()"></div>
+            <div id="up-arrow" class="arrow" onclick="spkg.screen.scrollUp()"></div>
             <div id="slide-browse-main" class="slide">
                 <div class="logo-header">
                     <div class="edgespace"></div>
@@ -91,27 +91,27 @@
             </div>
             <div id="slide-browse-repo" class="slide">
                 <div id="left-arrow-browse-repo" class="arrow left-arrow"
-                    onclick="showSlide('slide-browse-main')"></div>
+                    onclick="spkg.screen.showSlide('slide-browse-main')"></div>
                 <div class="logo-header">
                     <div class="edgespace"></div>
                     <p class="title">Select Repository</p>
                     <div class="edgespace"></div>
                 </div>
                 <div id="repo-list">
-                    <div class="item" onclick="browseRepo()">
+                    <div class="item" onclick="browseRepo('Slackware')">
                         <p class="name">Slackware</p>
                         <p class="description">
                             Official Slackware repository
                             (with dependency information)
                         </p>
                     </div>
-                    <div class="item" onclick="browseRepo()">
+                    <div class="item" onclick="browseRepo('Salix')">
                         <p class="name">Salix</p>
                         <p class="description">
                             Official Salix package repository
                         </p>
                     </div>
-                    <div class="item" onclick="browseRepo()">
+                    <div class="item" onclick="browseRepo('Extra')">
                         <p class="name">Extra</p>
                         <p class="description">
                             Extra Salix package repository
@@ -135,7 +135,7 @@
             </div>
             <div id="slide-browse-location" class="slide">
                 <div id="left-arrow-browse-location" class="arrow left-arrow"
-                    onclick="showSlide('slide-browse-repo')"></div>
+                    onclick="spkg.screen.showSlide('slide-browse-repo')"></div>
                 <div class="logo-header">
                     <div class="edgespace"></div>
                     <p class="title">Select Location</p>
@@ -221,7 +221,7 @@
             </div>
             <div id="slide-browse-package" class="slide">
                 <div id="left-arrow-browse-package" class="arrow left-arrow"
-                    onclick="showSlide('slide-browse-location')"></div>
+                    onclick="spkg.screen.showSlide('slide-browse-location')"></div>
                 <div class="logo-header">
                     <div class="edgespace"></div>
                     <p class="title">Select Package</p>
@@ -320,7 +320,7 @@
             </div>
             <div id="slide-search-results" class="slide">
                 <div id="left-arrow-search-repo" class="arrow left-arrow"
-                    onclick="showSlide('slide-browse-main')"></div>
+                    onclick="spkg.screen.showSlide('slide-browse-main')"></div>
                 <div class="logo-header">
                     <div class="edgespace"></div>
                     <p class="title">Package Search Results</p>
@@ -374,7 +374,7 @@
             </div>
             <div id="slide-browse-details" class="slide slide-details">
                 <div id="left-arrow-browse-details" class="arrow left-arrow"
-                    onclick="showSlide('slide-browse-package')"></div>
+                    onclick="spkg.screen.showSlide('slide-browse-package')"></div>
                 <div class="logo-header">
                     <div class="edgespace"></div>
                     <p class="title">Package Details</p>
@@ -439,7 +439,7 @@
             </div>
             <div id="slide-search-details" class="slide slide-details">
                 <div id="left-arrow-search-details" class="arrow left-arrow"
-                    onclick="showSlide('slide-search-results')"></div>
+                    onclick="spkg.screen.showSlide('slide-search-results')"></div>
                 <div class="logo-header">
                     <div class="edgespace"></div>
                     <p class="title">Package Details</p>
