@@ -5,6 +5,7 @@ let spkg = {};
 spkg.repo = new Repo(14.2, "x86_64");
 
 spkg.screen = new Screen();
+spkg.action = new Action(spkg.screen);
 
 /*
  * Catch the user pressing enter on the search box and act as
