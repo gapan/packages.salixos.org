@@ -5,8 +5,7 @@ class Repo {
         this.version = version;
         this.arch = arch;
         this.mirror = "http://download.salixos.org/";
-        this.data = null;
-        this.getInfo();
+        this.getData();
     }
 
     getData() {
