@@ -5,35 +5,35 @@ class RepoList {
         this.version = version;
         this.arch = arch;
         this.mirror = "http://download.salixos.org/";
-        this.repoNames = ["salix", "slackware", "slackware-extra"];
+        this.repoNames = ["Salix", "Slackware", "Slackware-Extra"];
         // only 14.2 has the Extra repo
         if (this.version >= 14.2) {
-            this.repoNames.push("extra");
+            this.repoNames.push("Extra");
         }
         this.repos = [];
         console.log("in RepoList constructor");
         for (let i = 0; i < this.repoNames.length; i++) {
             let repoName = this.repoNames[i];
-            this.repos.push(new Repo(this.getURL(repoName)));
+            this.repos.push(new Repo(repoName, this.getURL(repoName)));
         }
     }
 
     getURL(repo) {
         let url = this.mirror + this.arch + "/";
-        if (repo === "salix") {
+        if (repo === "Salix") {
             url += this.version;
-        } else if (repo === "slackware") {
+        } else if (repo === "Slackware") {
             url += "slackware-" + this.version; 
-        } else if (repo === "slackware-extra") {
+        } else if (repo === "Slackware-Extra") {
             url += "slackware-" + this.version + "/extra";
-        } else if (repo === "extra") {
+        } else if (repo === "Extra") {
             url += "extra-" + this.version;
         }
         url += "/PACKAGES.json";
         return url;
     }
 
-    getReady() {
+    isReady() {
         let n = 0;
         for (let i = 0; i < this.repos.length; i++) {
             let repo = this.repos[i];

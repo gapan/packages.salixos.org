@@ -1,10 +1,12 @@
 
 class Repo {
 
-    constructor(url) {
+    constructor(name, url) {
+        this.name = name;
         this.url = url;
         this.ready = false;
         this.getData(url);
+        this.description = this.getDescription;
     }
 
     getData(url) {
@@ -25,5 +27,15 @@ class Repo {
             }
         });
         xhr.send();   
+    }
+
+    getDescription() {
+        let descriptions = {
+            "Slackware" : "Official Slackware repository (with dependency information)",
+            "Salix" : "Official Salix package repository",
+            "Slackware-Extra" : "Extra Slackware package repository",
+            "Extra" : "Extra Salix package repository"
+        }
+        return descriptions[this.name];
     }
 }
