@@ -2,10 +2,10 @@
 let spkg = {};
 
 // testing repo functionality
-spkg.repo = new Repo(14.2, "x86_64");
+spkg.repoList = new RepoList(14.2, "x86_64");
 
 spkg.screen = new Screen();
-spkg.action = new Action(spkg.screen);
+spkg.action = new Action(spkg.screen, spkg.repoList);
 
 /*
  * Catch the user pressing enter on the search box and act as
