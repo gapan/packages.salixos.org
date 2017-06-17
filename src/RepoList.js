@@ -11,7 +11,6 @@ class RepoList {
             this.repoNames.push("Extra");
         }
         this.repos = [];
-        console.log("in RepoList constructor");
         for (let i = 0; i < this.repoNames.length; i++) {
             let repoName = this.repoNames[i];
             this.repos.push(new Repo(repoName, this.getURL(repoName)));
