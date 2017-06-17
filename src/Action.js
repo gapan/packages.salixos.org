@@ -46,7 +46,23 @@ class Action {
         // populate the location list
         let iHTML = "";
         for (let i = 0; i < this.repoList.repos.length; i++) {
-            console.log(this.repoList.repos[i]);
+            let repo = this.repoList.repos[i];
+            if (repo.name == name) {
+                console.log(repo);
+                let keys = Object.keys(repo.data.locations);
+                keys.sort();
+                for (let j = 0; j < keys.length; j++) {
+                    let name = keys[j];
+                    let description = repo.data.locations[name];
+                    iHTML += "<div class=\"item\" onclick=\"spkg.action.browseLocation()\">";
+                    iHTML += '<p class="name">';
+                    iHTML += name;
+                    iHTML += "</p>";
+                    iHTML += '<p class="description">';
+                    iHTML += description;
+                    iHTML += "</p></div>";
+                }
+            }
         }
         locationItems.innerHTML = iHTML;
         this.screen.showSlide("slide-browse-location");
