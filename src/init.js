@@ -20,8 +20,5 @@ document.getElementById("search").onkeypress=function(e){
     return true;
 }
 
-spkg.screen.hideSpinner();
-//setTimeout("spkg.screen.hideSpinner()", 5000);
-
 // browser back button moves the screen to the top part
 spkg.screen.noBackButton(window);
