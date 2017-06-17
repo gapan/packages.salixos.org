@@ -1,15 +1,6 @@
 
 class Action {
 
-    constructor(screen, repoList) {
-        this.screen = screen;
-        this.repoList = repoList;
-    }
-
-    updateRepoList(repoList) {
-        this.repoList = repoList;
-    }
-
     pkgSearch() {
         let searchResults = document.getElementById("slide-search-results-items");
         let version = document.getElementById("search-ver").value;
@@ -25,17 +16,17 @@ class Action {
             // if the terms to search for are too short, show a
             // warning message in the input placeholder text for
             // 2 seconds and do not perform any searching
-            this.screen.showSearchBoxMessage("Search terms are too short!");
+            spkg.screen.showSearchBoxMessage("Search terms are too short!");
             return;
         }
-        if (!this.repoList.isReady()) {
-            this.screen.showSearchBoxMessage("Oops! Data not downloaded yet!");
+        if (!spkg.repoList.isReady()) {
+            spkg.screen.showSearchBoxMessage("Oops! Data not downloaded yet!");
             return;
         }
         // get a list of packages that match the search terms
         let packageList = [];
-        for (let i = 0; i < this.repoList.repos.length; i++) {
-            let repo = this.repoList.repos[i];
+        for (let i = 0; i < spkg.repoList.repos.length; i++) {
+            let repo = spkg.repoList.repos[i];
             for (let j = 0; j < repo.data.packages.length; j++) {
                 let pkg = repo.data.packages[j];
                 for (let term of usedTerms) {
@@ -70,8 +61,8 @@ class Action {
             iHTML += '</p></div>';
         }
         searchResults.innerHTML = iHTML;
-        this.screen.showSlide("slide-search-results");
-        this.screen.scrollToId('screen-lower');
+        spkg.screen.showSlide("slide-search-results");
+        spkg.screen.scrollToId('screen-lower');
     }
 
     /* Executed when clicking the Browse button
@@ -80,14 +71,14 @@ class Action {
         let repoListElm = document.getElementById("repo-list");
         let version = document.getElementById("browse-ver").value;
         let arch = document.getElementById("browse-arch").value;
-        if (!this.repoList.isReady()) {
-            this.screen.showSearchBoxMessage("Oops! Data not downloaded yet!");
+        if (!spkg.repoList.isReady()) {
+            spkg.screen.showSearchBoxMessage("Oops! Data not downloaded yet!");
             return;
         }
         // populate the repository list
         let iHTML = "";
-        for (let i = 0; i < this.repoList.repos.length; i++) {
-            let repo = this.repoList.repos[i];
+        for (let i = 0; i < spkg.repoList.repos.length; i++) {
+            let repo = spkg.repoList.repos[i];
             iHTML += "<div class=\"item\" onclick=\"spkg.action.browseRepo('"
             iHTML += repo.name + "','" + version + "','" + arch;
             iHTML += "')\">";
@@ -97,7 +88,7 @@ class Action {
             iHTML += "</p></div>";
         }
         repoListElm.innerHTML = iHTML;
-        this.screen.showSlide("slide-browse-repo");
+        spkg.screen.showSlide("slide-browse-repo");
     }
 
     /* Executed when selecting a repository
@@ -106,8 +97,8 @@ class Action {
         let locationItems = document.getElementById("slide-browse-location-items");
         // populate the location list
         let iHTML = "";
-        for (let i = 0; i < this.repoList.repos.length; i++) {
-            let repo = this.repoList.repos[i];
+        for (let i = 0; i < spkg.repoList.repos.length; i++) {
+            let repo = spkg.repoList.repos[i];
             if (repo.name === name) {
                 let keys = Object.keys(repo.data.locations);
                 keys.sort();
@@ -128,7 +119,7 @@ class Action {
             }
         }
         locationItems.innerHTML = iHTML;
-        this.screen.showSlide("slide-browse-location");
+        spkg.screen.showSlide("slide-browse-location");
     }
 
     /* Executed when selecting a location
@@ -137,8 +128,8 @@ class Action {
         let packageItems = document.getElementById("slide-browse-package-items");
         // get a list of packages that are included in this location
         let packageList = [];
-        for (let i = 0; i < this.repoList.repos.length; i++) {
-            let repo = this.repoList.repos[i];
+        for (let i = 0; i < spkg.repoList.repos.length; i++) {
+            let repo = spkg.repoList.repos[i];
             if (repo.name === name) {
                 for (let j = 0; j < repo.data.packages.length; j++) {
                     let pkg = repo.data.packages[j];
@@ -168,7 +159,7 @@ class Action {
             iHTML += '</p></div>';
         }
         packageItems.innerHTML = iHTML;
-        this.screen.showSlide("slide-browse-package");
+        spkg.screen.showSlide("slide-browse-package");
     }
 
     browsePkg(loc, reponame, version, arch, pkgname, pkgver, pkgrel) {
@@ -176,7 +167,7 @@ class Action {
         // populate the package details in the DOM
         pkgDetails.innerHTML = this.getPkgInnerHTML(loc, reponame, version,
                                 arch, pkgname, pkgver, pkgrel);
-        this.screen.showSlide("slide-browse-details");
+        spkg.screen.showSlide("slide-browse-details");
     }
 
 
@@ -185,13 +176,13 @@ class Action {
         // populate the package details in the DOM
         pkgDetails.innerHTML = this.getPkgInnerHTML(loc, reponame, version,
                                 arch, pkgname, pkgver, pkgrel);
-        this.screen.showSlide("slide-search-details");
+        spkg.screen.showSlide("slide-search-details");
     }
 
     getPkgInnerHTML(loc, reponame, version, arch, pkgname, pkgver, pkgrel) {
         let iHTML = "";
-        for (let i = 0; i < this.repoList.repos.length; i++) {
-            let repo = this.repoList.repos[i];
+        for (let i = 0; i < spkg.repoList.repos.length; i++) {
+            let repo = spkg.repoList.repos[i];
             if (repo.name === reponame) {
                 for (let j = 0; j < repo.data.packages.length; j++) {
                     let pkg = repo.data.packages[j];
@@ -272,7 +263,7 @@ class Action {
         // Package search priority is Salix -> Extra -> Slackware -> Slackware-Extra
         let repos = ["Salix", "Extra", "Slackware", "Slackware-Extra"];
         for (let repoName of repos) {
-            let repo = this.repoList.getRepo(repoName);
+            let repo = spkg.repoList.getRepo(repoName);
             if (repo) {
                 let pkg = repo.getPkg(name);
                 if (pkg) {

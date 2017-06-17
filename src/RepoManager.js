@@ -30,6 +30,5 @@ class RepoManager {
             }
         }
         spkg.repoList = new RepoList(version, arch);
-        spkg.action.updateRepoList(spkg.repoList);
     }
 }
