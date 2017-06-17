@@ -47,7 +47,7 @@ class Action {
         let iHTML = "";
         for (let i = 0; i < this.repoList.repos.length; i++) {
             let repo = this.repoList.repos[i];
-            if (repo.name == name) {
+            if (repo.name === name) {
                 let keys = Object.keys(repo.data.locations);
                 keys.sort();
                 for (let j = 0; j < keys.length; j++) {
