@@ -158,6 +158,26 @@ class Action {
                             }
                             iHTML += "</p></div>";
                         }
+                        if (pkg.sug) {
+                            iHTML += '<div class="info"><h1>Suggests:</h1><p>';
+                            for (let k = 0; k < pkg.sug.length; k++) {
+                                let sug = pkg.sug[k];
+                                iHTML += '<a href="javascript:void(0)"';
+                                iHTML += 'onclick="spkg.action.viewDep(this.innerHTML)">';
+                                iHTML += sug + '</a> ';
+                            }
+                            iHTML += "</p></div>";
+                        }
+                        if (pkg.con) {
+                            iHTML += '<div class="info"><h1>Conflicts:</h1><p>';
+                            for (let k = 0; k < pkg.con.length; k++) {
+                                let con = pkg.con[k];
+                                iHTML += '<a href="javascript:void(0)"';
+                                iHTML += 'onclick="spkg.action.viewDep(this.innerHTML)">';
+                                iHTML += con + '</a> ';
+                            }
+                            iHTML += "</p></div>";
+                        }
                         break;
                     }
                 }
