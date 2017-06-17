@@ -48,6 +48,9 @@ class Action {
         packageList.sort(function(a,b) {return a.name > b.name;});
         // populate the search list in the DOM
         let iHTML = "";
+        if (packageList.length === 0) {
+            iHTML = "<div id=\"noresults\">No results found!</div>";
+        }
         for (let i = 0; i < packageList.length; i++) {
             let pkg = packageList[i];
             iHTML += '<div class="item"';
