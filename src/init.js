@@ -6,7 +6,7 @@ spkg.repoList = new RepoList(
     document.getElementById("search-arch").value);
 spkg.repoManager = new RepoManager();
 spkg.screen = new Screen();
-spkg.action = new Action(spkg.screen, spkg.repoList);
+spkg.action = new Action();
 
 /*
  * Catch the user pressing enter on the search box and act as
