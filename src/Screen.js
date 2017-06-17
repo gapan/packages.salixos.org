@@ -26,4 +26,13 @@ class Screen {
         this.scrollToId("screen-upper");
     }
 
+    hideSpinner() {
+        document.getElementById("spinner").setAttribute("style", "display: none");
+        document.getElementById("content").setAttribute("style", "display: block");
+    }
+
+    showSpinner() {
+        document.getElementById("spinner").setAttribute("style", "display: block");
+        document.getElementById("content").setAttribute("style", "display: none");
+    }
 }
