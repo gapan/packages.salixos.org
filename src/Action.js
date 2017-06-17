@@ -21,11 +21,11 @@ class Action {
             // if the terms to search for are too short, show a
             // warning message in the input placeholder text for
             // 2 seconds and do not perform any searching
-            document.getElementById('search').placeholder = 'Search terms are too short!';
-            document.getElementById('search').style.fontWeight = 'bold';
-            setTimeout("document.getElementById('search').placeholder = 'Enter search term...';" +
-                        "document.getElementById('search').style.fontWeight = 'normal';", 
-                2000);
+            this.screen.showSearchBoxMessage("Search terms are too short!");
+            return;
+        }
+        if (!this.repoList.isReady()) {
+            this.screen.showSearchBoxMessage("Oops! Data not downloaded yet!");
             return;
         }
         // get a list of packages that match the search terms
@@ -76,6 +76,10 @@ class Action {
         let repoListElm = document.getElementById("repo-list");
         let version = document.getElementById("browse-ver").value;
         let arch = document.getElementById("browse-arch").value;
+        if (!this.repoList.isReady()) {
+            this.screen.showSearchBoxMessage("Oops! Data not downloaded yet!");
+            return;
+        }
         // populate the repository list
         let iHTML = "";
         for (let i = 0; i < this.repoList.repos.length; i++) {

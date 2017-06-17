@@ -26,6 +26,15 @@ class Screen {
         this.scrollToId("screen-upper");
     }
 
+    showSearchBoxMessage(msg) {
+        document.getElementById('search').placeholder = msg;
+        document.getElementById('search').style.fontWeight = 'bold';
+        // reset everything back to normal after 2 seconds
+        setTimeout("document.getElementById('search').placeholder = 'Enter search term...';" +
+                    "document.getElementById('search').style.fontWeight = 'normal';",
+            2000);
+    }
+
     noBackButton(win) {
         if(typeof (win) === "undefined") {
             throw new Error("window is undefined");
