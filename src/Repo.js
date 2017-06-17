@@ -5,8 +5,7 @@ class Repo {
         this.name = name;
         this.url = url;
         this.ready = false;
-        this.getData(url);
-        this.description = this.getDescription;
+        this.description = this.getDescription();
     }
 
     getData(url) {
