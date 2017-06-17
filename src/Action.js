@@ -6,6 +6,10 @@ class Action {
         this.repoList = repoList;
     }
 
+    updateRepoList(repoList) {
+        this.repoList = repoList;
+    }
+
     pkgSearch() {
         let searchResults = document.getElementById("slide-search-results-items");
         let version = document.getElementById("search-ver").value;

@@ -1,9 +1,10 @@
 
 let spkg = {};
 
-// testing repo functionality
-spkg.repoList = new RepoList(14.2, "x86_64");
-
+spkg.repoList = new RepoList(
+    document.getElementById("search-ver").value,
+    document.getElementById("search-arch").value);
+spkg.repoManager = new RepoManager();
 spkg.screen = new Screen();
 spkg.action = new Action(spkg.screen, spkg.repoList);
 

@@ -31,7 +31,7 @@
                             <div class="edgespace"></div>
                             <div class="select">
                                 <p>Version:</p>
-                                <select id="search-ver" name="ver">
+                                <select id="search-ver" name="ver" onchange="spkg.repoManager.setRepoFromSearchPage()">
                                     <option value="14.2">14.2</option>
                                     <option value="14.1">14.1</option>
                                     <option value="14.0">14.0</option>
@@ -40,7 +40,7 @@
                             <div class="midspace"></div>
                             <div class="select">
                                 <p>Architecture:</p>
-                                <select id="search-arch" name="arch">
+                                <select id="search-arch" name="arch" onchange="spkg.repoManager.setRepoFromSearchPage()">
                                     <option value="x86_64">x86_64</option>
                                     <option value="i486">i486</option>
                                 </select>
@@ -65,7 +65,7 @@
                             <div class="edgespace"></div>
                             <div class="select">
                                 <p>Version:</p>
-                                <select id="browse-ver" name="ver">
+                                <select id="browse-ver" name="ver" onchange="spkg.repoManager.setRepoFromBrowsePage()">
                                     <option value="14.2">14.2</option>
                                     <option value="14.1">14.1</option>
                                     <option value="14.0">14.0</option>
@@ -74,7 +74,7 @@
                             <div class="midspace"></div>
                             <div class="select">
                                 <p>Architecture:</p>
-                                <select id="browse-arch" name="arch">
+                                <select id="browse-arch" name="arch" onchange="spkg.repoManager.setRepoFromBrowsePage()">
                                     <option value="x86_64">x86_64</option>
                                     <option value="i486">i486</option>
                                 </select>
