@@ -6,4 +6,4 @@ js:
 		src/Repo.js \
 		src/RepoList.js \
 		src/Action.js \
-		src/common.js
+		src/init.js
