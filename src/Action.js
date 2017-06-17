@@ -85,7 +85,6 @@ class Action {
                         packageList.push(pkg);
                     }
                 }
-                console.log(repo.data.packages.length);
                 break;
             }
         }
@@ -111,8 +110,7 @@ class Action {
         this.screen.showSlide("slide-browse-package");
     }
 
-    browsePkg(pkgname, pkgver, pkgrel) {
-        let arch = document.getElementById("browse-arch").value;
+    browsePkg(loc, reponame, version, arch, pkgname, pkgver, pkgrel) {
         console.log("Browse package: " + pkgname + "-" + pkgver +
                         "-" + arch + "-" + pkgrel);
         this.screen.showSlide("slide-browse-details");
