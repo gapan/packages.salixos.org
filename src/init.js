@@ -18,7 +18,7 @@ document.getElementById("search").onkeypress=function(e){
         return false;
     }
     return true;
-}
+};
 
 // browser back button moves the screen to the top part
 spkg.screen.noBackButton(window);
