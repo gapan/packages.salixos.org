@@ -208,44 +208,44 @@ class Action {
                         iHTML += pkg.descl + '</p></div></div>';
                         // show deps only if there are any
                         if (pkg.deps) {
-                            iHTML += '<div class="info"><h1>Dependencies:</h1><p>';
+                            iHTML += '<div class="info"><h1>Dependencies:</h1><div class="deps">';
                             for (let k = 0; k < pkg.deps.length; k++) {
                                 let dep = pkg.deps[k];
                                 if (dep instanceof Array) {
-                                    iHTML += '[ ';
+                                    iHTML += '<div class="depgroup">';
                                     for (let l = 0; l < dep.length; l++) {
                                         iHTML += '<a href="javascript:void(0)"'
                                         iHTML += 'onclick="spkg.action.viewDep(this.innerHTML)">';
                                         iHTML += dep[l] + '</a> ';
                                     }
-                                    iHTML += '] ';
+                                    iHTML += "</div>";
                                 } else {
                                     iHTML += '<a href="javascript:void(0)"';
                                     iHTML += 'onclick="spkg.action.viewDep(this.innerHTML)">';
                                     iHTML += dep + '</a> ';
                                 }
                             }
-                            iHTML += "</p></div>";
+                            iHTML += "</div></div>";
                         }
                         if (pkg.sug) {
-                            iHTML += '<div class="info"><h1>Suggests:</h1><p>';
+                            iHTML += '<div class="info"><h1>Suggests:</h1><div class="deps">';
                             for (let k = 0; k < pkg.sug.length; k++) {
                                 let sug = pkg.sug[k];
                                 iHTML += '<a href="javascript:void(0)"';
                                 iHTML += 'onclick="spkg.action.viewDep(this.innerHTML)">';
                                 iHTML += sug + '</a> ';
                             }
-                            iHTML += "</p></div>";
+                            iHTML += "</div></div>";
                         }
                         if (pkg.con) {
-                            iHTML += '<div class="info"><h1>Conflicts:</h1><p>';
+                            iHTML += '<div class="info"><h1>Conflicts:</h1><div class="deps">';
                             for (let k = 0; k < pkg.con.length; k++) {
                                 let con = pkg.con[k];
                                 iHTML += '<a href="javascript:void(0)"';
                                 iHTML += 'onclick="spkg.action.viewDep(this.innerHTML)">';
                                 iHTML += con + '</a> ';
                             }
-                            iHTML += "</p></div>";
+                            iHTML += "</div></div>";
                         }
                         break;
                     }
