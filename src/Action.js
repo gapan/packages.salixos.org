@@ -137,22 +137,27 @@ class Action {
                         iHTML += '<div class="text"><p>';
                         iHTML += pkg.descs + '</p><p>';
                         iHTML += pkg.descl + '</p></div></div>';
-                        iHTML += '<div class="info"><h1>Dependencies:</h1><p>';
-                        for (let k = 0; k < pkg.deps.length; k++) {
-                            let dep = pkg.deps[k];
-                            if (dep instanceof Array) {
-                                iHTML += '[ ';
-                                for (let l = 0; l < dep.length; l++) {
-                                    iHTML += '<a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">';
-                                    iHTML += dep[l] + '</a> ';
+                        // show deps only if there are any
+                        if (pkg.deps) {
+                            iHTML += '<div class="info"><h1>Dependencies:</h1><p>';
+                            for (let k = 0; k < pkg.deps.length; k++) {
+                                let dep = pkg.deps[k];
+                                if (dep instanceof Array) {
+                                    iHTML += '[ ';
+                                    for (let l = 0; l < dep.length; l++) {
+                                        iHTML += '<a href="javascript:void(0)"'
+                                        iHTML += 'onclick="spkg.action.viewDep(this.innerHTML)">';
+                                        iHTML += dep[l] + '</a> ';
+                                    }
+                                    iHTML += '] ';
+                                } else {
+                                    iHTML += '<a href="javascript:void(0)"';
+                                    iHTML += 'onclick="spkg.action.viewDep(this.innerHTML)">';
+                                    iHTML += dep + '</a> ';
                                 }
-                                iHTML += '] ';
-                            } else {
-                                iHTML += '<a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">';
-                                iHTML += dep + '</a> ';
                             }
+                            iHTML += "</p></div>";
                         }
-                        iHTML += "</p></div>";
                         break;
                     }
                 }
