@@ -19,7 +19,9 @@ class Action {
 
     /* Executed when clicking the Browse button
     * on the main browse page */
-    pkgBrowse() {
+    browseRepoList() {
+        let repoListElement = document.getElementById("repo-list");
+
         this.screen.showSlide("slide-browse-repo");
     }
 
