@@ -21,4 +21,4 @@ document.getElementById("search").onkeypress=function(e){
 }
 
 //spkg.screen.hideSpinner();
-setTimeout(spkg.screen.hideSpinner(), 30000);
+setTimeout("spkg.screen.hideSpinner()", 5000);
