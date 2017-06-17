@@ -20,8 +20,20 @@ class Action {
     /* Executed when clicking the Browse button
     * on the main browse page */
     browseRepoList() {
-        let repoListElement = document.getElementById("repo-list");
-
+        let repoListElm = document.getElementById("repo-list");
+        let version = document.getElementById("browse-ver").value;
+        let arch = document.getElementById("browse-arch").value;
+        // populate the repository list
+        let iHTML = "";
+        for (let i = 0; i < this.repoList.repos.length; i++) {
+            let repo = this.repoList.repos[i];
+            iHTML += "<div class=\"item\" onclick=\"spkg.action.browseRepo('" + repo.name + "')\">";
+            iHTML += "<p class=\"name\">" + repo.name + "</p>";
+            iHTML += "<p class=\"description\">";
+            iHTML += repo.description;
+            iHTML += "</p></div>";
+        }
+        repoListElm.innerHTML = iHTML;
         this.screen.showSlide("slide-browse-repo");
     }
 
