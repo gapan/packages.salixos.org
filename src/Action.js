@@ -8,16 +8,25 @@ class Action {
 
     pkgSearch() {
         let searchResults = document.getElementById("slide-search-results-items");
-        let terms = document.getElementById("search").value.toLowerCase().split(' ');
         let version = document.getElementById("search-ver").value;
         let arch = document.getElementById("search-arch").value;
+        let terms = document.getElementById("search").value.toLowerCase().split(' ');
+        let usedTerms = [];
+        for (let term of terms) {
+            if (term.length > 2) {
+                usedTerms.push(term);
+            }
+        }
+        if (usedTerms.length === 0) {
+            return;
+        }
         // get a list of packages that match the search terms
         let packageList = [];
         for (let i = 0; i < this.repoList.repos.length; i++) {
             let repo = this.repoList.repos[i];
             for (let j = 0; j < repo.data.packages.length; j++) {
                 let pkg = repo.data.packages[j];
-                for (let term of terms) {
+                for (let term of usedTerms) {
                     if(pkg.name.toLowerCase().indexOf(term) >= 0 ||
                         pkg.descs.toLowerCase().indexOf(term) >= 0 ||
                         pkg.descl.toLowerCase().indexOf(term) >= 0) {
