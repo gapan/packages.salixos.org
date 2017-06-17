@@ -5,7 +5,9 @@ class Action {
         let searchResults = document.getElementById("slide-search-results-items");
         let version = document.getElementById("search-ver").value;
         let arch = document.getElementById("search-arch").value;
-        let terms = document.getElementById("search").value.toLowerCase().split(' ');
+        let termsElm = document.getElementById("search");
+        let terms = termsElm.value.toLowerCase().split(" ");
+        termsElm.value = "";
         let usedTerms = [];
         for (let term of terms) {
             if (term.length > 2) {
