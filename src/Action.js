@@ -215,13 +215,15 @@ class Action {
                                     iHTML += '<div class="depgroup">';
                                     for (let l = 0; l < dep.length; l++) {
                                         iHTML += '<a href="javascript:void(0)"'
-                                        iHTML += 'onclick="spkg.action.viewDep(this.innerHTML)">';
+                                        iHTML += "onclick=\"spkg.action.viewDep(this.innerHTML,'";
+                                        iHTML += arch + "','" + version + "')\">";
                                         iHTML += dep[l] + '</a> ';
                                     }
                                     iHTML += "</div>";
                                 } else {
                                     iHTML += '<a href="javascript:void(0)"';
-                                    iHTML += 'onclick="spkg.action.viewDep(this.innerHTML)">';
+                                    iHTML += "onclick=\"spkg.action.viewDep(this.innerHTML,'";
+                                    iHTML += arch + "','" + version + "')\">";
                                     iHTML += dep + '</a> ';
                                 }
                             }
@@ -232,7 +234,8 @@ class Action {
                             for (let k = 0; k < pkg.sug.length; k++) {
                                 let sug = pkg.sug[k];
                                 iHTML += '<a href="javascript:void(0)"';
-                                iHTML += 'onclick="spkg.action.viewDep(this.innerHTML)">';
+                                iHTML += "onclick=\"spkg.action.viewDep(this.innerHTML,'";
+                                iHTML += arch + "','" + version + "')\">";
                                 iHTML += sug + '</a> ';
                             }
                             iHTML += "</div></div>";
@@ -242,7 +245,8 @@ class Action {
                             for (let k = 0; k < pkg.con.length; k++) {
                                 let con = pkg.con[k];
                                 iHTML += '<a href="javascript:void(0)"';
-                                iHTML += 'onclick="spkg.action.viewDep(this.innerHTML)">';
+                                iHTML += "onclick=\"spkg.action.viewDep(this.innerHTML,'";
+                                iHTML += arch + "','" + version + "')\">";
                                 iHTML += con + '</a> ';
                             }
                             iHTML += "</div></div>";
@@ -256,7 +260,18 @@ class Action {
         return iHTML;
     }
 
-    viewDep(dep) {
-        console.log("Viewing dep: " + dep);
+    viewDep(name, arch, version) {
+        // Package search priority is Salix -> Extra -> Slackware -> Slackware-Extra
+        let repos = ["Salix", "Extra", "Slackware", "Slackware-Extra"];
+        for (let repoName of repos) {
+            let repo = this.repoList.getRepo(repoName);
+            if (repo) {
+                let pkg = repo.getPkg(name);
+                if (pkg) {
+                    this.browseSearchedPkg(pkg.loc, repo.name, version, arch, pkg.name, pkg.ver, pkg.rel);
+                    return;
+                }
+            }
+        }
     }
 }
