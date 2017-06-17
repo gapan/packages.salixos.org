@@ -133,49 +133,7 @@
                         <div class="edgespace"></div>
                     </div>
                     <div id="slide-search-results-items">
-                        <!-- TODO: Add these programmatically -->
-                        <div class="item"
-                            onclick="spkg.action.browseSearchedPkg(
-                                this.getElementsByClassName('name')[0].textContent,
-                                this.getElementsByClassName('version')[0].textContent,
-                                this.getElementsByClassName('release')[0].textContent)">
-                            <div>
-                                <p class="name">js185</p>
-                                <p class="version">1.0.0</p>
-                                <p class="release">1</p>
-                            </div>
-                            <p class="description">
-                                js185 (SpiderMonkey - Mozilla's Javascript Engine)
-                            </p>
-                        </div>
-                        <div class="item"
-                            onclick="spkg.action.browseSearchedPkg(
-                                this.getElementsByClassName('name')[0].textContent,
-                                this.getElementsByClassName('version')[0].textContent,
-                                this.getElementsByClassName('release')[0].textContent)">
-                            <div>
-                                <p class="name">mozilla-firefox</p>
-                                <p class="version">45.8.0esr</p>
-                                <p class="release">1_slack14.2</p>
-                            </div>
-                            <p class="description">
-                                mozilla-firefox (Mozilla Firefox Web browser)
-                            </p>
-                        </div>
-                        <div class="item"
-                            onclick="spkg.action.browseSearchedPkg(
-                                this.getElementsByClassName('name')[0].textContent,
-                                this.getElementsByClassName('version')[0].textContent,
-                                this.getElementsByClassName('release')[0].textContent)">
-                            <div>
-                                <p class="name">mozilla-firefox</p>
-                                <p class="version">52.0.2esr</p>
-                                <p class="release">1gv</p>
-                            </div>
-                            <p class="description">
-                                mozilla-firefox (safe and easy web browser from mozilla)
-                            </p>
-                        </div>
+                        <!-- populated dynamically -->
                     </div>
                 </div>
                 <div id="slide-browse-details" class="slide slide-details">
@@ -201,94 +159,8 @@
                         <div class="edgespace"></div>
                     </div>
                     <div class="item">
-                        <!-- TODO: fill programmatically -->
-                        <div class="info">
-                            <h1>Name:</h1>
-                            <p>mozilla-firefox</p>
-                        </div>
-                        <div class="info">
-                            <h1>Version:</h1>
-                            <p>52.0.2esr</p>
-                        </div>
-                        <div class="info">
-                            <h1>Release:</h1>
-                            <p>1gv</p>
-                        </div>
-                        <div class="info">
-                            <h1>Repository:</h1>
-                            <p>Salix 14.2 (x86_64)</p>
-                        </div>
-                        <div class="info">
-                            <h1>Location:</h1>
-                            <p>xap</p>
-                        </div>
-                        <div class="info">
-                            <h1>Package Size:</h1>
-                            <p>51M</p>
-                        </div>
-                        <div class="info">
-                            <h1>Installed Size:</h1>
-                            <p>139M</p>
-                        </div>
-                        <div class="info">
-                            <h1>Description:</h1>
-                            <div class="text">
-                            <p>mozilla-firefox (safe and easy web browser from Mozilla)</p>
-                            <p>
-                                Firefox delivers safe, easy web browsing. A familiar user interface,
-                                enhanced security features including protection from online identity
-                                theft, and integrated search let you get the most out of the web.
-                            </p>
-                            </div>
-                        </div>
-                        <div class="info">
-                            <h1>Dependencies:</h1>
-                            <p>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">alsa-lib</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">atk</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">bzip2</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">cairo</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">dbus</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">dbus-glib</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">expat</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">fontconfig</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">freetype</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">gcc</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">gcc-g++</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">gdk-pixbuf2</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">glib2</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">gtk+2</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">harfbuzz</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libICE</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libSM</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libX11</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXau</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXcomposite</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXcursor</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXdamage</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXdmcp</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXext</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXfixes</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXi</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXinerama</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXrandr</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXrender</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXt</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXxf86vm</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libdrm</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libffi</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libpng</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libxcb</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libxshmfence</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">mesa</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">mozilla-nss</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">pango</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">pixman</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">startup-notification</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">util-linux</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">xcb-util</a>
-                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">zlib</a>
-                            </p>
+                        <div id="slide-search-details-item">
+                            <!-- populated dynamically -->
                         </div>
                     </div>
                 </div>

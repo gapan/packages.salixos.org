@@ -7,12 +7,48 @@ class Action {
     }
 
     pkgSearch() {
-        let terms = document.getElementById("search").value;
+        let searchResults = document.getElementById("slide-search-results-items");
+        let terms = document.getElementById("search").value.toLowerCase().split(' ');
         let version = document.getElementById("search-ver").value;
         let arch = document.getElementById("search-arch").value;
         console.log("Searching for: " + terms);
         console.log("Version: " + version);
         console.log("Architecture: " + arch);
+        // get a list of packages that match the search terms
+        let packageList = [];
+        for (let i = 0; i < this.repoList.repos.length; i++) {
+            let repo = this.repoList.repos[i];
+            for (let j = 0; j < repo.data.packages.length; j++) {
+                let pkg = repo.data.packages[j];
+                for (let term of terms) {
+                    if(pkg.name.toLowerCase().indexOf(term) >= 0 ||
+                        pkg.descs.toLowerCase().indexOf(term) >= 0 ||
+                        pkg.descl.toLowerCase().indexOf(term) >= 0) {
+                            pkg.reponame = repo.name;
+                            packageList.push(pkg);
+                    }
+                }
+            }
+        }
+        // sort packageList by package name
+        packageList.sort(function(a,b) {return a.name > b.name;});
+        // populate the search list in the DOM
+        let iHTML = "";
+        for (let i = 0; i < packageList.length; i++) {
+            let pkg = packageList[i];
+            iHTML += '<div class="item"';
+            iHTML += "onclick=\"spkg.action.browseSearchedPkg('"
+            iHTML += pkg.loc + "','" + pkg.reponame + "','" + version +  "','"  + arch;
+            iHTML += "','" + pkg.name + "','" + pkg.ver + "','" + pkg.rel;
+            iHTML += "')\"><div>";
+            iHTML += '<p class="name">' + pkg.name + '</p>';
+            iHTML += '<p class="version">' + pkg.ver + '</p>';
+            iHTML += '<p class="release">' + pkg.rel + '</p>';
+            iHTML += '</div><p class="description">';
+            iHTML += pkg.descs;
+            iHTML += '</p></div>';
+        }
+        searchResults.innerHTML = iHTML;
         this.screen.showSlide("slide-search-results");
         this.screen.scrollToId('screen-lower');
     }
@@ -112,6 +148,22 @@ class Action {
 
     browsePkg(loc, reponame, version, arch, pkgname, pkgver, pkgrel) {
         let pkgDetails = document.getElementById("slide-browse-details-item");
+        // populate the package details in the DOM
+        pkgDetails.innerHTML = this.getPkgInnerHTML(loc, reponame, version,
+                                arch, pkgname, pkgver, pkgrel);
+        this.screen.showSlide("slide-browse-details");
+    }
+
+
+    browseSearchedPkg(loc, reponame, version, arch, pkgname, pkgver, pkgrel) {
+        let pkgDetails = document.getElementById("slide-search-details-item");
+        // populate the package details in the DOM
+        pkgDetails.innerHTML = this.getPkgInnerHTML(loc, reponame, version,
+                                arch, pkgname, pkgver, pkgrel);
+        this.screen.showSlide("slide-search-details");
+    }
+
+    getPkgInnerHTML(loc, reponame, version, arch, pkgname, pkgver, pkgrel) {
         let iHTML = "";
         for (let i = 0; i < this.repoList.repos.length; i++) {
             let repo = this.repoList.repos[i];
@@ -184,16 +236,7 @@ class Action {
                 break;
             }
         }
-        // populate the package details in the DOM
-        pkgDetails.innerHTML = iHTML;
-        this.screen.showSlide("slide-browse-details");
-    }
-
-    browseSearchedPkg(pkgname, pkgver, pkgrel) {
-        let arch = document.getElementById("search-arch").value;
-        console.log("Browse package: " + pkgname + "-" + pkgver +
-                        "-" + arch + "-" + pkgrel);
-        this.screen.showSlide("slide-search-details");
+        return iHTML;
     }
 
     viewDep(dep) {
