@@ -40,4 +40,14 @@ class Repo {
         }
         return descriptions[this.name];
     }
+
+    getPkg(name) {
+        for (let i = 0; i < this.data.packages.length; i++) {
+            let pkg = this.data.packages[i];
+            if (pkg.name === name) {
+                return pkg;
+            }
+        }
+        return null;
+    }
 }
