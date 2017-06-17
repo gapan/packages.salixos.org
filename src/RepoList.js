@@ -46,4 +46,14 @@ class RepoList {
             return false;
         }
     }
+
+    getRepo(name) {
+        for (let i = 0; i < this.repos.length; i++) {
+            let repo = this.repos[i];
+            if (repo.name === name) {
+                return repo;
+            }
+        }
+        return null;
+    }
 }
