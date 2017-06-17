@@ -18,7 +18,7 @@ class Repo {
             if (xhr.readyState == 4) {
                 if ( (xhr.status>=200 && xhr.status<300) || xhr.status===304 ) {
                     // Ορθή παραλαβή δεδομένων
-                    console.log("got data from " + url);
+                    console.log("Got data from " + url);
                     that.data = JSON.parse(xhr.responseText);
                     that.ready = true;
                 } else {
