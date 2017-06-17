@@ -11,9 +11,6 @@ class Action {
         let terms = document.getElementById("search").value.toLowerCase().split(' ');
         let version = document.getElementById("search-ver").value;
         let arch = document.getElementById("search-arch").value;
-        console.log("Searching for: " + terms);
-        console.log("Version: " + version);
-        console.log("Architecture: " + arch);
         // get a list of packages that match the search terms
         let packageList = [];
         for (let i = 0; i < this.repoList.repos.length; i++) {
