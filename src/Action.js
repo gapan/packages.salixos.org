@@ -1,8 +1,9 @@
 
 class Action {
 
-    constructor(screen) {
+    constructor(screen, repoList) {
         this.screen = screen;
+        this.repoList = repoList;
     }
 
     pkgSearch() {
@@ -25,6 +26,10 @@ class Action {
     /* Executed when selecting a repository
     * to browse */
     browseRepo() {
+        console.log("hmnmm");
+        for (let i = 0; i < this.repoList.length; i++) {
+            console.log(this.repoList[i]);
+        }
         this.screen.showSlide("slide-browse-location");
     }
 
