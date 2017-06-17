@@ -1,15 +1,13 @@
 
 class Repo {
 
-    constructor(version, arch) {
-        this.version = version;
-        this.arch = arch;
-        this.mirror = "http://download.salixos.org/";
-        this.getData();
+    constructor(url) {
+        this.url = url;
+        this.ready = false;
+        this.getData(url);
     }
 
-    getData() {
-        let url = this.mirror + this.arch + "/" + this.version + "/PACKAGES.json"; 
+    getData(url) {
         let xhr = new XMLHttpRequest();
         xhr.open("GET", url);
         xhr.addEventListener("readystatechange", function (ev) {
@@ -18,6 +16,7 @@ class Repo {
                     // Ορθή παραλαβή δεδομένων
                     console.log("got data from " + url);
                     this.data = xhr.responseText;
+                    this.ready = true;
                 } else {
                     // Εμφανίστηκε σφάλμα
                     // Πιθανή επεξεργασία μέσω των xhr.status και xhr.statusText
