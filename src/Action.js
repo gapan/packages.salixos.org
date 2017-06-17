@@ -72,7 +72,42 @@ class Action {
 
     /* Executed when selecting a location
     * to browse */
-    browseLocation() {
+    browseLocation(loc, name, version, arch) {
+        let packageItems = document.getElementById("slide-browse-package-items");
+        // get a list of packages that are included in this location
+        let packageList = [];
+        for (let i = 0; i < this.repoList.repos.length; i++) {
+            let repo = this.repoList.repos[i];
+            if (repo.name === name) {
+                for (let j = 0; j < repo.data.packages.length; j++) {
+                    let pkg = repo.data.packages[j];
+                    if (pkg.loc === loc) {
+                        packageList.push(pkg);
+                    }
+                }
+                console.log(repo.data.packages.length);
+                break;
+            }
+        }
+        // sort packageList by package name
+        packageList.sort(function(a,b) {return a.name > b.name;});
+        // populate the package list in the DOM
+        let iHTML = "";
+        for (let i = 0; i < packageList.length; i++) {
+            let pkg = packageList[i];
+            iHTML += '<div class="item"';
+            iHTML += "onclick=\"spkg.action.browsePkg('"
+            iHTML += loc + "','" + name + "','" + version +  "','"  + arch;
+            iHTML += "','" + pkg.name + "','" + pkg.ver + "','" + pkg.rel;
+            iHTML += "')\"><div>";
+            iHTML += '<p class="name">' + pkg.name + '</p>';
+            iHTML += '<p class="version">' + pkg.ver + '</p>';
+            iHTML += '<p class="release">' + pkg.rel + '</p>';
+            iHTML += '</div><p class="description">';
+            iHTML += pkg.descs;
+            iHTML += '</p></div>';
+        }
+        packageItems.innerHTML = iHTML;
         this.screen.showSlide("slide-browse-package");
     }
 
