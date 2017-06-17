@@ -48,15 +48,16 @@ class Action {
         for (let i = 0; i < this.repoList.repos.length; i++) {
             let repo = this.repoList.repos[i];
             if (repo.name == name) {
-                console.log(repo);
                 let keys = Object.keys(repo.data.locations);
                 keys.sort();
                 for (let j = 0; j < keys.length; j++) {
-                    let name = keys[j];
-                    let description = repo.data.locations[name];
-                    iHTML += "<div class=\"item\" onclick=\"spkg.action.browseLocation()\">";
+                    let loc = keys[j];
+                    let description = repo.data.locations[loc];
+                    iHTML += "<div class=\"item\" onclick=\"spkg.action.browseLocation('";
+                    iHTML += loc + "','" + name + "','" + version +  "','"  + arch;
+                    iHTML += "')\">";
                     iHTML += '<p class="name">';
-                    iHTML += name;
+                    iHTML += loc;
                     iHTML += "</p>";
                     iHTML += '<p class="description">';
                     iHTML += description;
