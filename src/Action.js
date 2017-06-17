@@ -27,7 +27,9 @@ class Action {
         let iHTML = "";
         for (let i = 0; i < this.repoList.repos.length; i++) {
             let repo = this.repoList.repos[i];
-            iHTML += "<div class=\"item\" onclick=\"spkg.action.browseRepo('" + repo.name + "')\">";
+            iHTML += "<div class=\"item\" onclick=\"spkg.action.browseRepo('"
+            iHTML += repo.name + "','" + version + "','" + arch;
+            iHTML += "')\">";
             iHTML += "<p class=\"name\">" + repo.name + "</p>";
             iHTML += "<p class=\"description\">";
             iHTML += repo.description;
@@ -39,11 +41,14 @@ class Action {
 
     /* Executed when selecting a repository
     * to browse */
-    browseRepo() {
-        console.log("hmnmm");
-        for (let i = 0; i < this.repoList.length; i++) {
-            console.log(this.repoList[i]);
+    browseRepo(name, version, arch) {
+        let locationItems = document.getElementById("slide-browse-location-items");
+        // populate the location list
+        let iHTML = "";
+        for (let i = 0; i < this.repoList.repos.length; i++) {
+            console.log(this.repoList.repos[i]);
         }
+        locationItems.innerHTML = iHTML;
         this.screen.showSlide("slide-browse-location");
     }
 
