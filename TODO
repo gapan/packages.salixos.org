@@ -1,4 +1,3 @@
-* Make use of browser back/forward buttons
-* Better way to show deps/conflicts/suggests
 * Handle multiple repos
 * What to do with the spinner?
+* Deps/conflicts/suggests in their own page with proper back?
