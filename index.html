@@ -11,529 +11,547 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
     </head>
     <body onload="spkg.screen.scrollUp()">
-        <div id="screen-upper" class="screen">
-            <div id="search-items">
-                <div class="logo-header">
-                    <div class="edgespace"></div>
-                    <div class="logo"></div>
-                    <p class="title">Salix Package Search</p>
-                    <div class="edgespace"></div>
+        <div id="content">
+            <div id="screen-upper" class="screen">
+                <div id="search-items">
+                    <div class="logo-header">
+                        <div class="edgespace"></div>
+                        <div class="logo"></div>
+                        <p class="title">Salix Package Search</p>
+                        <div class="edgespace"></div>
+                    </div>
+                    <form>
+                        <div id="searchbox">
+                            <input id="search" type="search"
+                                placeholder="Enter search term..." autofocus>
+                            <input id="submit" class="button" type="reset"
+                                value="Search" onclick="spkg.action.pkgSearch()">
+                        </div>
+                        <div class=options>
+                            <div class="edgespace"></div>
+                            <div class="select">
+                                <p>Version:</p>
+                                <select id="search-ver" name="ver">
+                                    <option value="14.2">14.2</option>
+                                    <option value="14.1">14.1</option>
+                                    <option value="14.0">14.0</option>
+                                </select>
+                            </div>
+                            <div class="midspace"></div>
+                            <div class="select">
+                                <p>Architecture:</p>
+                                <select id="search-arch" name="arch">
+                                    <option value="x86_64">x86_64</option>
+                                    <option value="i486">i486</option>
+                                </select>
+                            </div>
+                            <div class="edgespace"></div>
+                        </div>
+                    </form>
+                    <div id="down-arrow" class="arrow" onclick="spkg.screen.scrollToId('screen-lower')"></div>
                 </div>
-                <form>
-                    <div id="searchbox">
-                        <input id="search" type="search"
-                            placeholder="Enter search term..." autofocus>
-                        <input id="submit" class="button" type="reset"
-                            value="Search" onclick="spkg.action.pkgSearch()">
-                    </div>
-                    <div class=options>
+            </div>
+            <div id="screen-lower" class="screen">
+                <div id="up-arrow" class="arrow" onclick="spkg.screen.scrollUp()"></div>
+                <div id="slide-browse-main" class="slide">
+                    <div class="logo-header">
                         <div class="edgespace"></div>
-                        <div class="select">
-                            <p>Version:</p>
-                            <select id="search-ver" name="ver">
-                                <option value="14.2">14.2</option>
-                                <option value="14.1">14.1</option>
-                                <option value="14.0">14.0</option>
-                            </select>
-                        </div>
-                        <div class="midspace"></div>
-                        <div class="select">
-                            <p>Architecture:</p>
-                            <select id="search-arch" name="arch">
-                                <option value="x86_64">x86_64</option>
-                                <option value="i486">i486</option>
-                            </select>
-                        </div>
+                        <div class="logo"></div>
+                        <p class="title">Browse Salix Repositories</p>
                         <div class="edgespace"></div>
                     </div>
-                </form>
-                <div id="down-arrow" class="arrow" onclick="spkg.screen.scrollToId('screen-lower')"></div>
+                    <form>
+                        <div class=options>
+                            <div class="edgespace"></div>
+                            <div class="select">
+                                <p>Version:</p>
+                                <select id="browse-ver" name="ver">
+                                    <option value="14.2">14.2</option>
+                                    <option value="14.1">14.1</option>
+                                    <option value="14.0">14.0</option>
+                                </select>
+                            </div>
+                            <div class="midspace"></div>
+                            <div class="select">
+                                <p>Architecture:</p>
+                                <select id="browse-arch" name="arch">
+                                    <option value="x86_64">x86_64</option>
+                                    <option value="i486">i486</option>
+                                </select>
+                            </div>
+                            <div class="midspace"></div>
+                            <div id="browsebtn">
+                                <input class="button"
+                                    type="button" value="Browse" onclick="spkg.action.pkgBrowse()">
+                            </div>
+                            <div class="edgespace"></div>
+                        </div>
+                    </form>
+                </div>
+                <div id="slide-browse-repo" class="slide">
+                    <div id="left-arrow-browse-repo" class="arrow left-arrow"
+                        onclick="spkg.screen.showSlide('slide-browse-main')"></div>
+                    <div class="logo-header">
+                        <div class="edgespace"></div>
+                        <p class="title">Select Repository</p>
+                        <div class="edgespace"></div>
+                    </div>
+                    <div id="repo-list">
+                        <div class="item" onclick="spkg.action.browseRepo('Slackware')">
+                            <p class="name">Slackware</p>
+                            <p class="description">
+                                Official Slackware repository
+                                (with dependency information)
+                            </p>
+                        </div>
+                        <div class="item" onclick="spkg.action.browseRepo('Salix')">
+                            <p class="name">Salix</p>
+                            <p class="description">
+                                Official Salix package repository
+                            </p>
+                        </div>
+                        <div class="item" onclick="spkg.action.browseRepo('Extra')">
+                            <p class="name">Extra</p>
+                            <p class="description">
+                                Extra Salix package repository
+                            </p>
+                        </div>
+                        <!--
+                        <div class="item" onclick="spkg.action.browseRepo()">
+                            <p class="name">SBo</p>
+                            <p class="description">
+                                SlackBuilds script Repository
+                            </p>
+                        </div>
+                        <div class="item" onclick="spkg.action.browseRepo()">
+                            <p class="name">SLKBUILD</p>
+                            <p class="description">
+                                Salix SLKBUILD script repository
+                            </p>
+                        </div>
+                        -->
+                    </div>
+                </div>
+                <div id="slide-browse-location" class="slide">
+                    <div id="left-arrow-browse-location" class="arrow left-arrow"
+                        onclick="spkg.screen.showSlide('slide-browse-repo')"></div>
+                    <div class="logo-header">
+                        <div class="edgespace"></div>
+                        <p class="title">Select Location</p>
+                        <div class="edgespace"></div>
+                    </div>
+                    <div id="slide-browse-location-items">
+                        <!-- TODO: fill these programmatically -->
+                        <div class="item" onclick="spkg.action.browseLocation()">
+                            <p class="name">a</p>
+                            <p class="description">
+                                The base system. Contains software
+                                to get up and running and have a text
+                                editor and basic communications programs
+                            </p>
+                        </div>
+                        <div class="item" onclick="spkg.action.browseLocation()">
+                            <p class="name">ap</p>
+                            <p class="description">
+                                Various applications that do not require
+                                the X Window System
+                            </p>
+                        </div>
+                        <div class="item" onclick="spkg.action.browseLocation()">
+                            <p class="name">d</p>
+                            <p class="description">
+                                Program development tools. Compilers,
+                                debuggers, interpreters, and man pages.
+                                It's all here
+                            </p>
+                        </div>
+                        <div class="item" onclick="spkg.action.browseLocation()">
+                            <p class="name">f</p>
+                            <p class="description">
+                                FAQs, HOWTOs, and other miscellaneous
+                                documentation
+                            </p>
+                        </div>
+                        <div class="item" onclick="spkg.action.browseLocation()">
+                            <p class="name">gnome</p>
+                            <p class="description">
+                                Applications and libraries from the
+                                Gnome project
+                            </p>
+                        </div>
+                        <div class="item" onclick="spkg.action.browseLocation()">
+                            <p class="name">games</p>
+                            <p class="description">
+                                Games :)
+                            </p>
+                        </div>
+                        <div class="item" onclick="spkg.action.browseLocation()">
+                            <p class="name">kde</p>
+                            <p class="description">
+                                KDE applications (depending on kdelibs)
+                            </p>
+                        </div>
+                        <div class="item" onclick="spkg.action.browseLocation()">
+                            <p class="name">l</p>
+                            <p class="description">
+                                Libraries
+                            </p>
+                        </div>
+                        <div class="item" onclick="spkg.action.browseLocation()">
+                            <p class="name">locale</p>
+                            <p class="description">
+                                Localisation Packages
+                            </p>
+                        </div>
+                        <div class="item" onclick="spkg.action.browseLocation()">
+                            <p class="name">lxde</p>
+                            <p class="description">
+                                LXDE Packages
+                            </p>
+                        </div>
+                        <div class="item" onclick="spkg.action.browseLocation()">
+                            <p class="name">n</p>
+                            <p class="description">
+                                Networking programs. Daemons, mail programs,
+                                telnet, news readers, web servers and so on
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="slide-browse-package" class="slide">
+                    <div id="left-arrow-browse-package" class="arrow left-arrow"
+                        onclick="spkg.screen.showSlide('slide-browse-location')"></div>
+                    <div class="logo-header">
+                        <div class="edgespace"></div>
+                        <p class="title">Select Package</p>
+                        <div class="edgespace"></div>
+                    </div>
+                    <div id="slide-browse-package-items">
+                        <!-- TODO: Add these programmatically -->
+                        <div class="item"
+                            onclick="spkg.action.browsePkg(
+                                this.getElementsByClassName('name')[0].textContent,
+                                this.getElementsByClassName('version')[0].textContent,
+                                this.getElementsByClassName('release')[0].textContent)">
+                            <div>
+                                <p class="name">Pygments</p>
+                                <p class="version">2.1.3</p>
+                                <p class="release">1gv</p>
+                            </div>
+                            <p class="description">
+                                Pygments (syntax highlighting package written in Python)
+                            </p>
+                        </div>
+                        <div class="item"
+                            onclick="spkg.action.browsePkg(
+                                this.getElementsByClassName('name')[0].textContent,
+                                this.getElementsByClassName('version')[0].textContent,
+                                this.getElementsByClassName('release')[0].textContent)">
+                            <div>
+                                <p class="name">avfs</p>
+                                <p class="version">1.0.3</p>
+                                <p class="release">1pp</p>
+                            </div>
+                            <p class="description">
+                                avfs (virtual file system)
+                            </p>
+                        </div>
+                        <div class="item"
+                            onclick="spkg.action.browsePkg(
+                                this.getElementsByClassName('name')[0].textContent,
+                                this.getElementsByClassName('version')[0].textContent,
+                                this.getElementsByClassName('release')[0].textContent)">
+                            <div>
+                                <p class="name">cpulimit</p>
+                                <p class="version">2.2</p>
+                                <p class="release">1gv</p>
+                            </div>
+                            <p class="description">
+                                cpulimit (CPU usage limiter for Linux)
+                            </p>
+                        </div>
+                        <div class="item"
+                            onclick="spkg.action.browsePkg(
+                                this.getElementsByClassName('name')[0].textContent,
+                                this.getElementsByClassName('version')[0].textContent,
+                                this.getElementsByClassName('release')[0].textContent)">
+                            <div>
+                                <p class="name">docutils</p>
+                                <p class="version">0.12</p>
+                                <p class="release">1gv</p>
+                            </div>
+                            <p class="description">
+                                docutils (Python Document Utilities
+                                module)
+                            </p>
+                        </div>
+                        <div class="item"
+                            onclick="spkg.action.browsePkg(
+                                this.getElementsByClassName('name')[0].textContent,
+                                this.getElementsByClassName('version')[0].textContent,
+                                this.getElementsByClassName('release')[0].textContent)">
+                            <div>
+                                <p class="name">depfinder</p>
+                                <p class="version">1.4.4</p>
+                                <p class="release">1gv</p>
+                            </div>
+                            <p class="description">
+                                depfinder (finds dependencies of
+                                Slackware packages)
+                            </p>
+                        </div>
+                        <div class="item"
+                            onclick="spkg.action.browsePkg(
+                                this.getElementsByClassName('name')[0].textContent,
+                                this.getElementsByClassName('version')[0].textContent,
+                                this.getElementsByClassName('release')[0].textContent)">
+                            <div>
+                                <p class="name">espeak</p>
+                                <p class="version">1.48.04</p>
+                                <p class="release">1dj</p>
+                            </div>
+                            <p class="description">
+                                espeak (a compact open source software
+                                speech synthesizer)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="slide-search-results" class="slide">
+                    <div id="left-arrow-search-repo" class="arrow left-arrow"
+                        onclick="spkg.screen.showSlide('slide-browse-main')"></div>
+                    <div class="logo-header">
+                        <div class="edgespace"></div>
+                        <p class="title">Package Search Results</p>
+                        <div class="edgespace"></div>
+                    </div>
+                    <div id="slide-search-results-items">
+                        <!-- TODO: Add these programmatically -->
+                        <div class="item"
+                            onclick="spkg.action.browseSearchedPkg(
+                                this.getElementsByClassName('name')[0].textContent,
+                                this.getElementsByClassName('version')[0].textContent,
+                                this.getElementsByClassName('release')[0].textContent)">
+                            <div>
+                                <p class="name">js185</p>
+                                <p class="version">1.0.0</p>
+                                <p class="release">1</p>
+                            </div>
+                            <p class="description">
+                                js185 (SpiderMonkey - Mozilla's Javascript Engine)
+                            </p>
+                        </div>
+                        <div class="item"
+                            onclick="spkg.action.browseSearchedPkg(
+                                this.getElementsByClassName('name')[0].textContent,
+                                this.getElementsByClassName('version')[0].textContent,
+                                this.getElementsByClassName('release')[0].textContent)">
+                            <div>
+                                <p class="name">mozilla-firefox</p>
+                                <p class="version">45.8.0esr</p>
+                                <p class="release">1_slack14.2</p>
+                            </div>
+                            <p class="description">
+                                mozilla-firefox (Mozilla Firefox Web browser)
+                            </p>
+                        </div>
+                        <div class="item"
+                            onclick="spkg.action.browseSearchedPkg(
+                                this.getElementsByClassName('name')[0].textContent,
+                                this.getElementsByClassName('version')[0].textContent,
+                                this.getElementsByClassName('release')[0].textContent)">
+                            <div>
+                                <p class="name">mozilla-firefox</p>
+                                <p class="version">52.0.2esr</p>
+                                <p class="release">1gv</p>
+                            </div>
+                            <p class="description">
+                                mozilla-firefox (safe and easy web browser from mozilla)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="slide-browse-details" class="slide slide-details">
+                    <div id="left-arrow-browse-details" class="arrow left-arrow"
+                        onclick="spkg.screen.showSlide('slide-browse-package')"></div>
+                    <div class="logo-header">
+                        <div class="edgespace"></div>
+                        <p class="title">Package Details</p>
+                        <div class="edgespace"></div>
+                    </div>
+                    <div class="item">
+                        <!-- TODO: fill programmatically -->
+                        <div class="info">
+                            <h1>Name:</h1>
+                            <p>Pygments</p>
+                        </div>
+                        <div class="info">
+                            <h1>Version:</h1>
+                            <p>2.1.3</p>
+                        </div>
+                        <div class="info">
+                            <h1>Release:</h1>
+                            <p>1gv</p>
+                        </div>
+                        <div class="info">
+                            <h1>Repository:</h1>
+                            <p>Salix 14.2 (x86_64)</p>
+                        </div>
+                        <div class="info">
+                            <h1>Location:</h1>
+                            <p>ap</p>
+                        </div>
+                        <div class="info">
+                            <h1>Package Size:</h1>
+                            <p>1028K</p>
+                        </div>
+                        <div class="info">
+                            <h1>Installed Size:</h1>
+                            <p>4112K</p>
+                        </div>
+                        <div class="info">
+                            <h1>Description:</h1>
+                            <div class="text">
+                            <p>Pygments (syntax highlighting package written in Python)</p>
+                            <p>
+                                It is a generic syntax highlighter for general use in all kinds of
+                                software such as forum systems, wikis or other applications that need
+                                to prettify source code.
+                                Highlights are:
+                                * A wide range of common languages and markup formats is supported.
+                                * Special attention is paid to details, increasing quality.
+                                * Support for new languages and formats are added easily.
+                                * output formats: HTML, LaTeX, RTF, SVG and ANSI sequences.
+                                * It is usable as a command-line tool and as a library.
+                            </p>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <h1>Dependencies:</h1>
+                            <p>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">python</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">python-chardet</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">python-pillow</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="slide-search-details" class="slide slide-details">
+                    <div id="left-arrow-search-details" class="arrow left-arrow"
+                        onclick="spkg.screen.showSlide('slide-search-results')"></div>
+                    <div class="logo-header">
+                        <div class="edgespace"></div>
+                        <p class="title">Package Details</p>
+                        <div class="edgespace"></div>
+                    </div>
+                    <div class="item">
+                        <!-- TODO: fill programmatically -->
+                        <div class="info">
+                            <h1>Name:</h1>
+                            <p>mozilla-firefox</p>
+                        </div>
+                        <div class="info">
+                            <h1>Version:</h1>
+                            <p>52.0.2esr</p>
+                        </div>
+                        <div class="info">
+                            <h1>Release:</h1>
+                            <p>1gv</p>
+                        </div>
+                        <div class="info">
+                            <h1>Repository:</h1>
+                            <p>Salix 14.2 (x86_64)</p>
+                        </div>
+                        <div class="info">
+                            <h1>Location:</h1>
+                            <p>xap</p>
+                        </div>
+                        <div class="info">
+                            <h1>Package Size:</h1>
+                            <p>51M</p>
+                        </div>
+                        <div class="info">
+                            <h1>Installed Size:</h1>
+                            <p>139M</p>
+                        </div>
+                        <div class="info">
+                            <h1>Description:</h1>
+                            <div class="text">
+                            <p>mozilla-firefox (safe and easy web browser from Mozilla)</p>
+                            <p>
+                                Firefox delivers safe, easy web browsing. A familiar user interface,
+                                enhanced security features including protection from online identity
+                                theft, and integrated search let you get the most out of the web.
+                            </p>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <h1>Dependencies:</h1>
+                            <p>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">alsa-lib</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">atk</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">bzip2</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">cairo</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">dbus</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">dbus-glib</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">expat</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">fontconfig</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">freetype</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">gcc</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">gcc-g++</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">gdk-pixbuf2</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">glib2</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">gtk+2</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">harfbuzz</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libICE</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libSM</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libX11</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXau</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXcomposite</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXcursor</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXdamage</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXdmcp</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXext</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXfixes</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXi</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXinerama</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXrandr</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXrender</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXt</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXxf86vm</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libdrm</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libffi</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libpng</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libxcb</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libxshmfence</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">mesa</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">mozilla-nss</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">pango</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">pixman</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">startup-notification</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">util-linux</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">xcb-util</a>
+                                <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">zlib</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div id="screen-lower" class="screen">
-            <div id="up-arrow" class="arrow" onclick="spkg.screen.scrollUp()"></div>
-            <div id="slide-browse-main" class="slide">
-                <div class="logo-header">
-                    <div class="edgespace"></div>
-                    <div class="logo"></div>
-                    <p class="title">Browse Salix Repositories</p>
-                    <div class="edgespace"></div>
-                </div>
-                <form>
-                    <div class=options>
-                        <div class="edgespace"></div>
-                        <div class="select">
-                            <p>Version:</p>
-                            <select id="browse-ver" name="ver">
-                                <option value="14.2">14.2</option>
-                                <option value="14.1">14.1</option>
-                                <option value="14.0">14.0</option>
-                            </select>
-                        </div>
-                        <div class="midspace"></div>
-                        <div class="select">
-                            <p>Architecture:</p>
-                            <select id="browse-arch" name="arch">
-                                <option value="x86_64">x86_64</option>
-                                <option value="i486">i486</option>
-                            </select>
-                        </div>
-                        <div class="midspace"></div>
-                        <div id="browsebtn">
-                            <input class="button"
-                                type="button" value="Browse" onclick="spkg.action.pkgBrowse()">
-                        </div>
-                        <div class="edgespace"></div>
-                    </div>
-                </form>
-            </div>
-            <div id="slide-browse-repo" class="slide">
-                <div id="left-arrow-browse-repo" class="arrow left-arrow"
-                    onclick="spkg.screen.showSlide('slide-browse-main')"></div>
-                <div class="logo-header">
-                    <div class="edgespace"></div>
-                    <p class="title">Select Repository</p>
-                    <div class="edgespace"></div>
-                </div>
-                <div id="repo-list">
-                    <div class="item" onclick="spkg.action.browseRepo('Slackware')">
-                        <p class="name">Slackware</p>
-                        <p class="description">
-                            Official Slackware repository
-                            (with dependency information)
-                        </p>
-                    </div>
-                    <div class="item" onclick="spkg.action.browseRepo('Salix')">
-                        <p class="name">Salix</p>
-                        <p class="description">
-                            Official Salix package repository
-                        </p>
-                    </div>
-                    <div class="item" onclick="spkg.action.browseRepo('Extra')">
-                        <p class="name">Extra</p>
-                        <p class="description">
-                            Extra Salix package repository
-                        </p>
-                    </div>
-                    <!--
-                    <div class="item" onclick="spkg.action.browseRepo()">
-                        <p class="name">SBo</p>
-                        <p class="description">
-                            SlackBuilds script Repository
-                        </p>
-                    </div>
-                    <div class="item" onclick="spkg.action.browseRepo()">
-                        <p class="name">SLKBUILD</p>
-                        <p class="description">
-                            Salix SLKBUILD script repository
-                        </p>
-                    </div>
-                    -->
-                </div>
-            </div>
-            <div id="slide-browse-location" class="slide">
-                <div id="left-arrow-browse-location" class="arrow left-arrow"
-                    onclick="spkg.screen.showSlide('slide-browse-repo')"></div>
-                <div class="logo-header">
-                    <div class="edgespace"></div>
-                    <p class="title">Select Location</p>
-                    <div class="edgespace"></div>
-                </div>
-                <div id="slide-browse-location-items">
-                    <!-- TODO: fill these programmatically -->
-                    <div class="item" onclick="spkg.action.browseLocation()">
-                        <p class="name">a</p>
-                        <p class="description">
-                            The base system. Contains software
-                            to get up and running and have a text
-                            editor and basic communications programs
-                        </p>
-                    </div>
-                    <div class="item" onclick="spkg.action.browseLocation()">
-                        <p class="name">ap</p>
-                        <p class="description">
-                            Various applications that do not require
-                            the X Window System
-                        </p>
-                    </div>
-                    <div class="item" onclick="spkg.action.browseLocation()">
-                        <p class="name">d</p>
-                        <p class="description">
-                            Program development tools. Compilers,
-                            debuggers, interpreters, and man pages.
-                            It's all here
-                        </p>
-                    </div>
-                    <div class="item" onclick="spkg.action.browseLocation()">
-                        <p class="name">f</p>
-                        <p class="description">
-                            FAQs, HOWTOs, and other miscellaneous
-                            documentation
-                        </p>
-                    </div>
-                    <div class="item" onclick="spkg.action.browseLocation()">
-                        <p class="name">gnome</p>
-                        <p class="description">
-                            Applications and libraries from the
-                            Gnome project
-                        </p>
-                    </div>
-                    <div class="item" onclick="spkg.action.browseLocation()">
-                        <p class="name">games</p>
-                        <p class="description">
-                            Games :)
-                        </p>
-                    </div>
-                    <div class="item" onclick="spkg.action.browseLocation()">
-                        <p class="name">kde</p>
-                        <p class="description">
-                            KDE applications (depending on kdelibs)
-                        </p>
-                    </div>
-                    <div class="item" onclick="spkg.action.browseLocation()">
-                        <p class="name">l</p>
-                        <p class="description">
-                            Libraries
-                        </p>
-                    </div>
-                    <div class="item" onclick="spkg.action.browseLocation()">
-                        <p class="name">locale</p>
-                        <p class="description">
-                            Localisation Packages
-                        </p>
-                    </div>
-                    <div class="item" onclick="spkg.action.browseLocation()">
-                        <p class="name">lxde</p>
-                        <p class="description">
-                            LXDE Packages
-                        </p>
-                    </div>
-                    <div class="item" onclick="spkg.action.browseLocation()">
-                        <p class="name">n</p>
-                        <p class="description">
-                            Networking programs. Daemons, mail programs,
-                            telnet, news readers, web servers and so on
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div id="slide-browse-package" class="slide">
-                <div id="left-arrow-browse-package" class="arrow left-arrow"
-                    onclick="spkg.screen.showSlide('slide-browse-location')"></div>
-                <div class="logo-header">
-                    <div class="edgespace"></div>
-                    <p class="title">Select Package</p>
-                    <div class="edgespace"></div>
-                </div>
-                <div id="slide-browse-package-items">
-                    <!-- TODO: Add these programmatically -->
-                    <div class="item"
-                        onclick="spkg.action.browsePkg(
-                            this.getElementsByClassName('name')[0].textContent,
-                            this.getElementsByClassName('version')[0].textContent,
-                            this.getElementsByClassName('release')[0].textContent)">
-                        <div>
-                            <p class="name">Pygments</p>
-                            <p class="version">2.1.3</p>
-                            <p class="release">1gv</p>
-                        </div>
-                        <p class="description">
-                            Pygments (syntax highlighting package written in Python)
-                        </p>
-                    </div>
-                    <div class="item"
-                        onclick="spkg.action.browsePkg(
-                            this.getElementsByClassName('name')[0].textContent,
-                            this.getElementsByClassName('version')[0].textContent,
-                            this.getElementsByClassName('release')[0].textContent)">
-                        <div>
-                            <p class="name">avfs</p>
-                            <p class="version">1.0.3</p>
-                            <p class="release">1pp</p>
-                        </div>
-                        <p class="description">
-                            avfs (virtual file system)
-                        </p>
-                    </div>
-                    <div class="item"
-                        onclick="spkg.action.browsePkg(
-                            this.getElementsByClassName('name')[0].textContent,
-                            this.getElementsByClassName('version')[0].textContent,
-                            this.getElementsByClassName('release')[0].textContent)">
-                        <div>
-                            <p class="name">cpulimit</p>
-                            <p class="version">2.2</p>
-                            <p class="release">1gv</p>
-                        </div>
-                        <p class="description">
-                            cpulimit (CPU usage limiter for Linux)
-                        </p>
-                    </div>
-                    <div class="item"
-                        onclick="spkg.action.browsePkg(
-                            this.getElementsByClassName('name')[0].textContent,
-                            this.getElementsByClassName('version')[0].textContent,
-                            this.getElementsByClassName('release')[0].textContent)">
-                        <div>
-                            <p class="name">docutils</p>
-                            <p class="version">0.12</p>
-                            <p class="release">1gv</p>
-                        </div>
-                        <p class="description">
-                            docutils (Python Document Utilities
-                            module)
-                        </p>
-                    </div>
-                    <div class="item"
-                        onclick="spkg.action.browsePkg(
-                            this.getElementsByClassName('name')[0].textContent,
-                            this.getElementsByClassName('version')[0].textContent,
-                            this.getElementsByClassName('release')[0].textContent)">
-                        <div>
-                            <p class="name">depfinder</p>
-                            <p class="version">1.4.4</p>
-                            <p class="release">1gv</p>
-                        </div>
-                        <p class="description">
-                            depfinder (finds dependencies of
-                            Slackware packages)
-                        </p>
-                    </div>
-                    <div class="item"
-                        onclick="spkg.action.browsePkg(
-                            this.getElementsByClassName('name')[0].textContent,
-                            this.getElementsByClassName('version')[0].textContent,
-                            this.getElementsByClassName('release')[0].textContent)">
-                        <div>
-                            <p class="name">espeak</p>
-                            <p class="version">1.48.04</p>
-                            <p class="release">1dj</p>
-                        </div>
-                        <p class="description">
-                            espeak (a compact open source software
-                            speech synthesizer)
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div id="slide-search-results" class="slide">
-                <div id="left-arrow-search-repo" class="arrow left-arrow"
-                    onclick="spkg.screen.showSlide('slide-browse-main')"></div>
-                <div class="logo-header">
-                    <div class="edgespace"></div>
-                    <p class="title">Package Search Results</p>
-                    <div class="edgespace"></div>
-                </div>
-                <div id="slide-search-results-items">
-                    <!-- TODO: Add these programmatically -->
-                    <div class="item"
-                        onclick="spkg.action.browseSearchedPkg(
-                            this.getElementsByClassName('name')[0].textContent,
-                            this.getElementsByClassName('version')[0].textContent,
-                            this.getElementsByClassName('release')[0].textContent)">
-                        <div>
-                            <p class="name">js185</p>
-                            <p class="version">1.0.0</p>
-                            <p class="release">1</p>
-                        </div>
-                        <p class="description">
-                            js185 (SpiderMonkey - Mozilla's Javascript Engine)
-                        </p>
-                    </div>
-                    <div class="item"
-                        onclick="spkg.action.browseSearchedPkg(
-                            this.getElementsByClassName('name')[0].textContent,
-                            this.getElementsByClassName('version')[0].textContent,
-                            this.getElementsByClassName('release')[0].textContent)">
-                        <div>
-                            <p class="name">mozilla-firefox</p>
-                            <p class="version">45.8.0esr</p>
-                            <p class="release">1_slack14.2</p>
-                        </div>
-                        <p class="description">
-                            mozilla-firefox (Mozilla Firefox Web browser)
-                        </p>
-                    </div>
-                    <div class="item"
-                        onclick="spkg.action.browseSearchedPkg(
-                            this.getElementsByClassName('name')[0].textContent,
-                            this.getElementsByClassName('version')[0].textContent,
-                            this.getElementsByClassName('release')[0].textContent)">
-                        <div>
-                            <p class="name">mozilla-firefox</p>
-                            <p class="version">52.0.2esr</p>
-                            <p class="release">1gv</p>
-                        </div>
-                        <p class="description">
-                            mozilla-firefox (safe and easy web browser from mozilla)
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div id="slide-browse-details" class="slide slide-details">
-                <div id="left-arrow-browse-details" class="arrow left-arrow"
-                    onclick="spkg.screen.showSlide('slide-browse-package')"></div>
-                <div class="logo-header">
-                    <div class="edgespace"></div>
-                    <p class="title">Package Details</p>
-                    <div class="edgespace"></div>
-                </div>
-                <div class="item">
-                    <!-- TODO: fill programmatically -->
-                    <div class="info">
-                        <h1>Name:</h1>
-                        <p>Pygments</p>
-                    </div>
-                    <div class="info">
-                        <h1>Version:</h1>
-                        <p>2.1.3</p>
-                    </div>
-                    <div class="info">
-                        <h1>Release:</h1>
-                        <p>1gv</p>
-                    </div>
-                    <div class="info">
-                        <h1>Repository:</h1>
-                        <p>Salix 14.2 (x86_64)</p>
-                    </div>
-                    <div class="info">
-                        <h1>Location:</h1>
-                        <p>ap</p>
-                    </div>
-                    <div class="info">
-                        <h1>Package Size:</h1>
-                        <p>1028K</p>
-                    </div>
-                    <div class="info">
-                        <h1>Installed Size:</h1>
-                        <p>4112K</p>
-                    </div>
-                    <div class="info">
-                        <h1>Description:</h1>
-                        <div class="text">
-                        <p>Pygments (syntax highlighting package written in Python)</p>
-                        <p>
-                            It is a generic syntax highlighter for general use in all kinds of
-                            software such as forum systems, wikis or other applications that need
-                            to prettify source code.
-                            Highlights are:
-                            * A wide range of common languages and markup formats is supported.
-                            * Special attention is paid to details, increasing quality.
-                            * Support for new languages and formats are added easily.
-                            * output formats: HTML, LaTeX, RTF, SVG and ANSI sequences.
-                            * It is usable as a command-line tool and as a library.
-                        </p>
-                        </div>
-                    </div>
-                    <div class="info">
-                        <h1>Dependencies:</h1>
-                        <p>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">python</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">python-chardet</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">python-pillow</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div id="slide-search-details" class="slide slide-details">
-                <div id="left-arrow-search-details" class="arrow left-arrow"
-                    onclick="spkg.screen.showSlide('slide-search-results')"></div>
-                <div class="logo-header">
-                    <div class="edgespace"></div>
-                    <p class="title">Package Details</p>
-                    <div class="edgespace"></div>
-                </div>
-                <div class="item">
-                    <!-- TODO: fill programmatically -->
-                    <div class="info">
-                        <h1>Name:</h1>
-                        <p>mozilla-firefox</p>
-                    </div>
-                    <div class="info">
-                        <h1>Version:</h1>
-                        <p>52.0.2esr</p>
-                    </div>
-                    <div class="info">
-                        <h1>Release:</h1>
-                        <p>1gv</p>
-                    </div>
-                    <div class="info">
-                        <h1>Repository:</h1>
-                        <p>Salix 14.2 (x86_64)</p>
-                    </div>
-                    <div class="info">
-                        <h1>Location:</h1>
-                        <p>xap</p>
-                    </div>
-                    <div class="info">
-                        <h1>Package Size:</h1>
-                        <p>51M</p>
-                    </div>
-                    <div class="info">
-                        <h1>Installed Size:</h1>
-                        <p>139M</p>
-                    </div>
-                    <div class="info">
-                        <h1>Description:</h1>
-                        <div class="text">
-                        <p>mozilla-firefox (safe and easy web browser from Mozilla)</p>
-                        <p>
-                            Firefox delivers safe, easy web browsing. A familiar user interface,
-                            enhanced security features including protection from online identity
-                            theft, and integrated search let you get the most out of the web.
-                        </p>
-                        </div>
-                    </div>
-                    <div class="info">
-                        <h1>Dependencies:</h1>
-                        <p>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">alsa-lib</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">atk</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">bzip2</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">cairo</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">dbus</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">dbus-glib</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">expat</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">fontconfig</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">freetype</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">gcc</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">gcc-g++</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">gdk-pixbuf2</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">glib2</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">gtk+2</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">harfbuzz</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libICE</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libSM</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libX11</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXau</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXcomposite</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXcursor</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXdamage</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXdmcp</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXext</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXfixes</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXi</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXinerama</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXrandr</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXrender</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXt</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libXxf86vm</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libdrm</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libffi</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libpng</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libxcb</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">libxshmfence</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">mesa</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">mozilla-nss</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">pango</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">pixman</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">startup-notification</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">util-linux</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">xcb-util</a>
-                            <a href="javascript:void(0)" onclick="spkg.action.viewDep(this.innerHTML)">zlib</a>
-                        </p>
-                    </div>
-                </div>
+        <div id="spinner">
+            <div class="sk-fading-circle">
+                <div class="sk-circle1 sk-circle"></div>
+                <div class="sk-circle2 sk-circle"></div>
+                <div class="sk-circle3 sk-circle"></div>
+                <div class="sk-circle4 sk-circle"></div>
+                <div class="sk-circle5 sk-circle"></div>
+                <div class="sk-circle6 sk-circle"></div>
+                <div class="sk-circle7 sk-circle"></div>
+                <div class="sk-circle8 sk-circle"></div>
+                <div class="sk-circle9 sk-circle"></div>
+                <div class="sk-circle10 sk-circle"></div>
+                <div class="sk-circle11 sk-circle"></div>
+                <div class="sk-circle12 sk-circle"></div>
             </div>
         </div>
         <script src="pkg.js" type="text/javascript"></script>
