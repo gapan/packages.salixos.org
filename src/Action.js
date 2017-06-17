@@ -111,8 +111,40 @@ class Action {
     }
 
     browsePkg(loc, reponame, version, arch, pkgname, pkgver, pkgrel) {
-        console.log("Browse package: " + pkgname + "-" + pkgver +
-                        "-" + arch + "-" + pkgrel);
+        let pkgDetails = document.getElementById("slide-browse-details-item");
+        let iHTML = "";
+        for (let i = 0; i < this.repoList.repos.length; i++) {
+            let repo = this.repoList.repos[i];
+            if (repo.name === reponame) {
+                for (let j = 0; j < repo.data.packages.length; j++) {
+                    let pkg = repo.data.packages[j];
+                    if (pkg.name === pkgname && pkg.ver === pkgver && pkg.rel ===pkgrel) {
+                        iHTML += '<div class="info"><h1>Name:</h1><p>';
+                        iHTML += pkg.name + '</p></div>';
+                        iHTML += '<div class="info"><h1>Version:</h1><p>';
+                        iHTML += pkg.ver + '</p></div>';
+                        iHTML += '<div class="info"><h1>Release:</h1><p>';
+                        iHTML += pkg.rel + '</p></div>';
+                        iHTML += '<div class="info"><h1>Repository:</h1><p>';
+                        iHTML += reponame + " " + version + " (" + arch + ")</p></div>";
+                        iHTML += '<div class="info"><h1>Location:</h1><p>';
+                        iHTML += pkg.loc + '</p></div>';
+                        iHTML += '<div class="info"><h1>Package Size:</h1><p>';
+                        iHTML += pkg.sizec + '</p></div>';
+                        iHTML += '<div class="info"><h1>Installed Size:</h1><p>';
+                        iHTML += pkg.sizeu + '</p></div>';
+                        iHTML += '<div class="info"><h1>Description:</h1>';
+                        iHTML += '<div class="text"><p>';
+                        iHTML += pkg.descs + '</p><p>';
+                        iHTML += pkg.descl + '</p></div></div>';
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+        // populate the package details in the DOM
+        pkgDetails.innerHTML = iHTML;
         this.screen.showSlide("slide-browse-details");
     }
 
