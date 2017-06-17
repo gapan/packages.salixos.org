@@ -62,6 +62,7 @@ class Action {
                     iHTML += description;
                     iHTML += "</p></div>";
                 }
+                break;
             }
         }
         locationItems.innerHTML = iHTML;
