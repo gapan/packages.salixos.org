@@ -20,5 +20,5 @@ document.getElementById("search").onkeypress=function(e){
     return true;
 }
 
-//spkg.screen.hideSpinner();
-setTimeout("spkg.screen.hideSpinner()", 5000);
+spkg.screen.hideSpinner();
+//setTimeout("spkg.screen.hideSpinner()", 5000);
