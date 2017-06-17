@@ -18,6 +18,14 @@ class Action {
             }
         }
         if (usedTerms.length === 0) {
+            // if the terms to search for are too short, show a
+            // warning message in the input placeholder text for
+            // 2 seconds and do not perform any searching
+            document.getElementById('search').placeholder = 'Search terms are too short!';
+            document.getElementById('search').style.fontWeight = 'bold';
+            setTimeout("document.getElementById('search').placeholder = 'Enter search term...';" +
+                        "document.getElementById('search').style.fontWeight = 'normal';", 
+                2000);
             return;
         }
         // get a list of packages that match the search terms
