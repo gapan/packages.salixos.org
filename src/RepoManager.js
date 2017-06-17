@@ -24,7 +24,7 @@ class RepoManager {
             }
         }
         for (let i = 0; i < otherArchElm.options.length; i++) {
-            if (otherArchElm.options[i].innerHTML === version) {
+            if (otherArchElm.options[i].innerHTML === arch) {
                 otherArchElm.selectedIndex = i;
                 break;
             }
