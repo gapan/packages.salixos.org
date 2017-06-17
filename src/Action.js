@@ -118,7 +118,7 @@ class Action {
             if (repo.name === reponame) {
                 for (let j = 0; j < repo.data.packages.length; j++) {
                     let pkg = repo.data.packages[j];
-                    if (pkg.name === pkgname && pkg.ver === pkgver && pkg.rel ===pkgrel) {
+                    if (pkg.name === pkgname && pkg.ver === pkgver && pkg.rel === pkgrel) {
                         iHTML += '<div class="info"><h1>Name:</h1><p>';
                         iHTML += pkg.name + '</p></div>';
                         iHTML += '<div class="info"><h1>Version:</h1><p>';
