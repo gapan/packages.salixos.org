@@ -1,4 +1,9 @@
 
+/*
+ * The RepoList class is used to gather all the repositories that are used for
+ * each version/architecture combination into a single entity.
+ */
+
 class RepoList {
 
     constructor(version, arch) {

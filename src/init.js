@@ -1,4 +1,8 @@
 
+/*
+ * This acts as an entry point for the web app, setting everything up.
+ */
+
 let spkg = {};
 
 spkg.repoManager = new RepoManager();

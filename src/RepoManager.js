@@ -1,3 +1,13 @@
+
+/*
+ * The RepoManager class is used to (surpise!) manage the repositories data.
+ * It syncs changes made in the select elements for version and arch and
+ * creates new repositories if needed.
+ * Once a repository is created, it stores it in memory for future use. In
+ * that way, if case the user wants to switch back to it during the same
+ * session, the data won't have to be downloaded twice.
+ */
+
 class RepoManager {
 
     constructor() {

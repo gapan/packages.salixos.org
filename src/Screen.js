@@ -1,4 +1,9 @@
 
+/*
+ * The Screen class is used to manage movement between different slides in the
+ * screen.
+ */
+
 class Screen {
 
     scrollToId(elem) {

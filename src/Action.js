@@ -1,4 +1,10 @@
 
+/*
+ * The Action class is responsible for reacting to user interaction with the
+ * web app. It receives user input and edits the DOM to show appropriate
+ * output.
+ */
+
 class Action {
 
     pkgSearch() {
