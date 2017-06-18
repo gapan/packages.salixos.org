@@ -1,5 +1,15 @@
 class RepoManager {
 
+    constructor() {
+        let version = document.getElementById("search-ver").value;
+        let arch = document.getElementById("search-arch").value;
+        this.repoStore = {};
+        spkg.repoList = new RepoList(version, arch);
+        // let's store the repo data in memory so we don't retrieve them
+        // every time another repo is selected.
+        this.repoStore[version + arch] = spkg.repoList;
+    }
+
     setRepoFromSearchPage() {
         let version = document.getElementById("search-ver").value;
         let arch = document.getElementById("search-arch").value;
@@ -29,6 +39,10 @@ class RepoManager {
                 break;
             }
         }
-        spkg.repoList = new RepoList(version, arch);
+        // only create a new RepoList if it's not in memory
+        if (!this.repoStore[version + arch]) {
+            this.repoStore[version + arch] = new RepoList(version, arch);
+        }
+        spkg.repoList = this.repoStore[version + arch];
     }
 }
