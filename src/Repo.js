@@ -33,6 +33,8 @@ class Repo {
                 } else {
                     // Oops. There was an error getting the data.
                     console.log("Error getting data from " + url);
+                    document.getElementById('search').placeholder =
+                        "Error retrieving data. Try reloading the page. :(";
                 }
             }
         });
