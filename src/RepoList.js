@@ -9,7 +9,7 @@ class RepoList {
     constructor(version, arch) {
         this.version = version;
         this.arch = arch;
-        this.mirror = "http://download.salixos.org/";
+        this.mirror = "https://download.salixos.org/";
         this.repoNames = ["Salix", "Slackware", "Slackware-Extra"];
         // only 14.2 has the Extra repo
         if (this.version >= 14.2) {
