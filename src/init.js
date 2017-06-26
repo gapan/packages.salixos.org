@@ -5,8 +5,8 @@
 
 let spkg = {};
 
-spkg.repoManager = new RepoManager();
 spkg.screen = new Screen();
+spkg.repoManager = new RepoManager();
 spkg.action = new Action();
 
 /*

@@ -73,7 +73,8 @@ body {
     border: 2px solid #6c6;
     background-color: #6c6;
     width: 100%;
-    display: inline-flex;
+    /*display: inline-flex;*/
+    display: none;
     margin: 3px 0;
     box-sizing: border-box;
 }
@@ -114,6 +115,35 @@ body {
     border-right: 0;
     width: auto;
     height: auto;
+}
+
+#searchprogressbox {
+    font-size: 16px;
+    padding: 0px;
+    margin: 6px;
+    width: 100%;
+    height: 36px;
+    background-color: #cf9;
+    border: 2px solid #6c6;
+    color: white;
+    position: relative;
+}
+
+#searchprogressbox p {
+    text-align: center;
+    z-index: 2;
+    color: #333;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+#searchprogress {
+    background-color: #6c6;
+    width: 0%;
+    height: 36px;
 }
 
 /* Remove native styles from input
@@ -185,6 +215,36 @@ input {
 
 #screen-lower #browsebtn {
     margin: auto 3px 5px 2px;
+    display: none;
+}
+
+#browseprogressbox {
+    font-size: 16px;
+    padding: 0;
+    width: 140px;
+    height: 32px;
+    margin: auto 3px 5px 2px;
+    background-color: #cf9;
+    border: 2px solid #6c6;
+    color: white;
+    position: relative;
+}
+
+#browseprogressbox p {
+    text-align: center;
+    z-index: 2;
+    color: #333;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+#browseprogress {
+    background-color: #6c6;
+    width: 0%;
+    height: 36px;
 }
 
 #repo-list {

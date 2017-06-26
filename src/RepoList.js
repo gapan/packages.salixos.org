@@ -15,10 +15,13 @@ class RepoList {
         if (this.version >= 14.2) {
             this.repoNames.push("Extra");
         }
+        // loading a new repo, so show the progress bar
+        spkg.screen.showProgressBar();
+        // now load the repo data
         this.repos = [];
         for (let i = 0; i < this.repoNames.length; i++) {
             let repoName = this.repoNames[i];
-            this.repos.push(new Repo(repoName, this.getURL(repoName)));
+            this.repos.push(new Repo(repoName, this.getURL(repoName), this.version, this.arch));
         }
     }
 
@@ -38,6 +41,14 @@ class RepoList {
     }
 
     isReady() {
+        if (this.getNumberOfReadyRepos() === this.repos.length) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    getNumberOfReadyRepos() {
         let n = 0;
         for (let i = 0; i < this.repos.length; i++) {
             let repo = this.repos[i];
@@ -45,11 +56,7 @@ class RepoList {
                 n++;
             }
         }
-        if (n === this.repos.length) {
-            return true;
-        } else {
-            return false;
-        }
+        return n;
     }
 
     getRepo(name) {

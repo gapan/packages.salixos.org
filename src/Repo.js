@@ -10,29 +10,32 @@
 
 class Repo {
 
-    constructor(name, url) {
+    constructor(name, url, version, arch) {
         this.name = name;
         this.url = url;
+        this.version = version;
+        this.arch = arch;
         this.ready = false;
         this.description = this.getDescription();
         this.data = null;
-        this.getData(url);
+        this.getData();
     }
 
-    getData(url) {
+    getData() {
         let xhr = new XMLHttpRequest();
-        xhr.open("GET", url);
+        xhr.open("GET", this.url);
         let that = this;
         xhr.addEventListener("readystatechange", function (ev) {
             if (xhr.readyState == 4) {
                 if ( (xhr.status>=200 && xhr.status<300) || xhr.status===304 ) {
                     // Data received succesfully
-                    console.log("Got data from " + url);
+                    console.log("Got data from " + that.url);
                     that.data = JSON.parse(xhr.responseText);
                     that.ready = true;
+                    spkg.screen.updateProgressBar(that.version, that.arch);
                 } else {
                     // Oops. There was an error getting the data.
-                    console.log("Error getting data from " + url);
+                    console.log("Error getting data from " + that.url);
                     document.getElementById('search').placeholder =
                         "Error retrieving data. Try reloading the page. :(";
                 }

@@ -21,6 +21,10 @@
                         <div class="edgespace"></div>
                     </div>
                     <form>
+                        <div id="searchprogressbox">
+                            <p>Loading (<em>0%</em>)...</p>
+                            <div id="searchprogress"></div>
+                        </div>
                         <div id="searchbox">
                             <input id="search" type="search"
                                 placeholder="Enter search term..." autofocus>
@@ -83,6 +87,10 @@
                             <div id="browsebtn">
                                 <input class="button"
                                     type="button" value="Browse" onclick="spkg.action.browseRepoList()">
+                            </div>
+                            <div id="browseprogressbox">
+                                <p><em>0%</em></p>
+                                <div id="browseprogress"></div>
                             </div>
                             <div class="edgespace"></div>
                         </div>
