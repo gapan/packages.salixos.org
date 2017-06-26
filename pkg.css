@@ -50,6 +50,10 @@ body {
     display: block;
 }
 
+.logo-header a {
+    outline: none;
+}
+
 .logo {
     width: 75px;
     height: 67px;
