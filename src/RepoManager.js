@@ -4,13 +4,14 @@
  * It syncs changes made in the select elements for version and arch and
  * creates new repositories if needed.
  * Once a repository is created, it stores it in memory for future use. In
- * that way, if case the user wants to switch back to it during the same
+ * that way, if the user wants to switch back to it during the same
  * session, the data won't have to be downloaded twice.
  */
 
 class RepoManager {
 
     constructor() {
+        // read the version and arch from localStorage if it's there
         let version = localStorage.getItem('version');
         if (!version) {
             version = document.getElementById("search-ver").value;
