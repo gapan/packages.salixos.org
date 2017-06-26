@@ -11,8 +11,22 @@
 class RepoManager {
 
     constructor() {
-        let version = document.getElementById("search-ver").value;
-        let arch = document.getElementById("search-arch").value;
+        let version = localStorage.getItem('version');
+        if (!version) {
+            version = document.getElementById("search-ver").value;
+            localStorage.setItem('version', version);
+        } else {
+            document.getElementById('search-ver').value = version;
+            document.getElementById('browse-ver').value = version;
+        }
+        let arch = localStorage.getItem('arch');
+        if (!arch) {
+            arch = document.getElementById("search-arch").value;
+            localStorage.setItem('arch', arch);
+        } else {
+            document.getElementById('search-arch').value = arch;
+            document.getElementById('browse-arch').value = arch;
+        }
         this.repoStore = {};
         spkg.repoList = new RepoList(version, arch);
         // let's store the repo data in memory so we don't retrieve them
@@ -25,6 +39,8 @@ class RepoManager {
         let arch = document.getElementById("search-arch").value;
         let otherVersion = document.getElementById("browse-ver");
         let otherArch = document.getElementById("browse-arch");
+        localStorage.setItem('version', version);
+        localStorage.setItem('arch', arch);
         this.syncRepoSelections(version, arch, otherVersion, otherArch);
     }
 
