@@ -12,21 +12,21 @@ class RepoManager {
 
     constructor() {
         // read the version and arch from localStorage if it's there
-        let version = localStorage.getItem('version');
+        let version = localStorage.getItem("version");
         if (!version) {
             version = document.getElementById("search-ver").value;
-            localStorage.setItem('version', version);
+            localStorage.setItem("version", version);
         } else {
-            document.getElementById('search-ver').value = version;
-            document.getElementById('browse-ver').value = version;
+            document.getElementById("search-ver").value = version;
+            document.getElementById("browse-ver").value = version;
         }
-        let arch = localStorage.getItem('arch');
+        let arch = localStorage.getItem("arch");
         if (!arch) {
             arch = document.getElementById("search-arch").value;
-            localStorage.setItem('arch', arch);
+            localStorage.setItem("arch", arch);
         } else {
-            document.getElementById('search-arch').value = arch;
-            document.getElementById('browse-arch').value = arch;
+            document.getElementById("search-arch").value = arch;
+            document.getElementById("browse-arch").value = arch;
         }
         this.repoStore = {};
         spkg.repoList = new RepoList(version, arch);

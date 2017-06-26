@@ -38,7 +38,7 @@ class Action {
             for (let j = 0; j < repo.data.packages.length; j++) {
                 let pkg = repo.data.packages[j];
                 for (let term of usedTerms) {
-                    if(pkg.name.toLowerCase().indexOf(term) >= 0 ||
+                    if (pkg.name.toLowerCase().indexOf(term) >= 0 ||
                         pkg.descs.toLowerCase().indexOf(term) >= 0 ||
                         pkg.descl.toLowerCase().indexOf(term) >= 0) {
                             pkg.reponame = repo.name;
@@ -56,21 +56,21 @@ class Action {
         }
         for (let i = 0; i < packageList.length; i++) {
             let pkg = packageList[i];
-            iHTML += '<div class="item"';
-            iHTML += "onclick=\"spkg.action.browseSearchedPkg('"
+            iHTML += "<div class=\"item\"";
+            iHTML += "onclick=\"spkg.action.browseSearchedPkg('";
             iHTML += pkg.loc + "','" + pkg.reponame + "','" + version +  "','"  + arch;
             iHTML += "','" + pkg.name + "','" + pkg.ver + "','" + pkg.rel;
             iHTML += "')\"><div>";
-            iHTML += '<p class="name">' + pkg.name + '</p>';
-            iHTML += '<p class="version">' + pkg.ver + '</p>';
-            iHTML += '<p class="release">' + pkg.rel + '</p>';
-            iHTML += '</div><p class="description">';
+            iHTML += "<p class=\"name\">" + pkg.name + "</p>";
+            iHTML += "<p class=\"version\">" + pkg.ver + "</p>";
+            iHTML += "<p class=\"release\">" + pkg.rel + "</p>";
+            iHTML += "</div><p class=\"description\">";
             iHTML += pkg.descs;
-            iHTML += '</p></div>';
+            iHTML += "</p></div>";
         }
         searchResults.innerHTML = iHTML;
         spkg.screen.showSlide("slide-search-results");
-        spkg.screen.scrollToId('screen-lower');
+        spkg.screen.scrollToId("screen-lower");
     }
 
     /* Executed when clicking the Browse button
@@ -87,7 +87,7 @@ class Action {
         let iHTML = "";
         for (let i = 0; i < spkg.repoList.repos.length; i++) {
             let repo = spkg.repoList.repos[i];
-            iHTML += "<div class=\"item\" onclick=\"spkg.action.browseRepo('"
+            iHTML += "<div class=\"item\" onclick=\"spkg.action.browseRepo('";
             iHTML += repo.name + "','" + version + "','" + arch;
             iHTML += "')\">";
             iHTML += "<p class=\"name\">" + repo.name + "</p>";
@@ -116,10 +116,10 @@ class Action {
                     iHTML += "<div class=\"item\" onclick=\"spkg.action.browseLocation('";
                     iHTML += loc + "','" + name + "','" + version +  "','"  + arch;
                     iHTML += "')\">";
-                    iHTML += '<p class="name">';
+                    iHTML += "<p class=\"name\">";
                     iHTML += loc;
                     iHTML += "</p>";
-                    iHTML += '<p class="description">';
+                    iHTML += "<p class=\"description\">";
                     iHTML += description;
                     iHTML += "</p></div>";
                 }
@@ -154,17 +154,17 @@ class Action {
         let iHTML = "";
         for (let i = 0; i < packageList.length; i++) {
             let pkg = packageList[i];
-            iHTML += '<div class="item"';
-            iHTML += "onclick=\"spkg.action.browsePkg('"
+            iHTML += "<div class=\"item\"";
+            iHTML += "onclick=\"spkg.action.browsePkg('";
             iHTML += loc + "','" + name + "','" + version +  "','"  + arch;
             iHTML += "','" + pkg.name + "','" + pkg.ver + "','" + pkg.rel;
             iHTML += "')\"><div>";
-            iHTML += '<p class="name">' + pkg.name + '</p>';
-            iHTML += '<p class="version">' + pkg.ver + '</p>';
-            iHTML += '<p class="release">' + pkg.rel + '</p>';
-            iHTML += '</div><p class="description">';
+            iHTML += "<p class=\"name\">" + pkg.name + "</p>";
+            iHTML += "<p class=\"version\">" + pkg.ver + "</p>";
+            iHTML += "<p class=\"release\">" + pkg.rel + "</p>";
+            iHTML += "</div><p class=\"description\">";
             iHTML += pkg.descs;
-            iHTML += '</p></div>';
+            iHTML += "</p></div>";
         }
         packageItems.innerHTML = iHTML;
         spkg.screen.showSlide("slide-browse-package");
@@ -195,66 +195,66 @@ class Action {
                 for (let j = 0; j < repo.data.packages.length; j++) {
                     let pkg = repo.data.packages[j];
                     if (pkg.name === pkgname && pkg.ver === pkgver && pkg.rel === pkgrel) {
-                        iHTML += '<div class="info"><h1>Name:</h1><p>';
-                        iHTML += pkg.name + '</p></div>';
-                        iHTML += '<div class="info"><h1>Version:</h1><p>';
-                        iHTML += pkg.ver + '</p></div>';
-                        iHTML += '<div class="info"><h1>Release:</h1><p>';
-                        iHTML += pkg.rel + '</p></div>';
-                        iHTML += '<div class="info"><h1>Repository:</h1><p>';
+                        iHTML += "<div class=\"info\"><h1>Name:</h1><p>";
+                        iHTML += pkg.name + "</p></div>";
+                        iHTML += "<div class=\"info\"><h1>Version:</h1><p>";
+                        iHTML += pkg.ver + "</p></div>";
+                        iHTML += "<div class=\"info\"><h1>Release:</h1><p>";
+                        iHTML += pkg.rel + "</p></div>";
+                        iHTML += "<div class=\"info\"><h1>Repository:</h1><p>";
                         iHTML += reponame + " " + version + " (" + arch + ")</p></div>";
-                        iHTML += '<div class="info"><h1>Location:</h1><p>';
-                        iHTML += pkg.loc + '</p></div>';
-                        iHTML += '<div class="info"><h1>Package Size:</h1><p>';
-                        iHTML += pkg.sizec + '</p></div>';
-                        iHTML += '<div class="info"><h1>Installed Size:</h1><p>';
-                        iHTML += pkg.sizeu + '</p></div>';
-                        iHTML += '<div class="info"><h1>Description:</h1>';
-                        iHTML += '<div class="text"><p>';
-                        iHTML += pkg.descs + '</p><p>';
-                        iHTML += pkg.descl + '</p></div></div>';
+                        iHTML += "<div class=\"info\"><h1>Location:</h1><p>";
+                        iHTML += pkg.loc + "</p></div>";
+                        iHTML += "<div class=\"info\"><h1>Package Size:</h1><p>";
+                        iHTML += pkg.sizec + "</p></div>";
+                        iHTML += "<div class=\"info\"><h1>Installed Size:</h1><p>";
+                        iHTML += pkg.sizeu + "</p></div>";
+                        iHTML += "<div class=\"info\"><h1>Description:</h1>";
+                        iHTML += "<div class=\"text\"><p>";
+                        iHTML += pkg.descs + "</p><p>";
+                        iHTML += pkg.descl + "</p></div></div>";
                         // show deps only if there are any
                         if (pkg.deps) {
-                            iHTML += '<div class="info"><h1>Dependencies:</h1><div class="deps">';
+                            iHTML += "<div class=\"info\"><h1>Dependencies:</h1><div class=\"deps\">";
                             for (let k = 0; k < pkg.deps.length; k++) {
                                 let dep = pkg.deps[k];
                                 if (dep instanceof Array) {
-                                    iHTML += '<div class="depgroup">';
+                                    iHTML += "<div class=\"depgroup\">";
                                     for (let l = 0; l < dep.length; l++) {
-                                        iHTML += '<a href="javascript:void(0)"'
+                                        iHTML += "<a href=\"javascript:void(0)\"";
                                         iHTML += "onclick=\"spkg.action.viewDep(this.innerHTML,'";
                                         iHTML += arch + "','" + version + "')\">";
-                                        iHTML += dep[l] + '</a> ';
+                                        iHTML += dep[l] + "</a> ";
                                     }
                                     iHTML += "</div>";
                                 } else {
-                                    iHTML += '<a href="javascript:void(0)"';
+                                    iHTML += "<a href=\"javascript:void(0)\"";
                                     iHTML += "onclick=\"spkg.action.viewDep(this.innerHTML,'";
                                     iHTML += arch + "','" + version + "')\">";
-                                    iHTML += dep + '</a> ';
+                                    iHTML += dep + "</a> ";
                                 }
                             }
                             iHTML += "</div></div>";
                         }
                         if (pkg.sug) {
-                            iHTML += '<div class="info"><h1>Suggests:</h1><div class="deps">';
+                            iHTML += "<div class=\"info\"><h1>Suggests:</h1><div class=\"deps\">";
                             for (let k = 0; k < pkg.sug.length; k++) {
                                 let sug = pkg.sug[k];
-                                iHTML += '<a href="javascript:void(0)"';
+                                iHTML += "<a href=\"javascript:void(0)\"";
                                 iHTML += "onclick=\"spkg.action.viewDep(this.innerHTML,'";
                                 iHTML += arch + "','" + version + "')\">";
-                                iHTML += sug + '</a> ';
+                                iHTML += sug + "</a> ";
                             }
                             iHTML += "</div></div>";
                         }
                         if (pkg.con) {
-                            iHTML += '<div class="info"><h1>Conflicts:</h1><div class="deps">';
+                            iHTML += "<div class=\"info\"><h1>Conflicts:</h1><div class=\"deps\">";
                             for (let k = 0; k < pkg.con.length; k++) {
                                 let con = pkg.con[k];
-                                iHTML += '<a href="javascript:void(0)"';
+                                iHTML += "<a href=\"javascript:void(0)\"";
                                 iHTML += "onclick=\"spkg.action.viewDep(this.innerHTML,'";
                                 iHTML += arch + "','" + version + "')\">";
-                                iHTML += con + '</a> ';
+                                iHTML += con + "</a> ";
                             }
                             iHTML += "</div></div>";
                         }

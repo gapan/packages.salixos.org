@@ -36,7 +36,7 @@ class Repo {
                 } else {
                     // Oops. There was an error getting the data.
                     console.log("Error getting data from " + that.url);
-                    document.getElementById('search').placeholder =
+                    document.getElementById("search").placeholder =
                         "Error retrieving data. Try reloading the page. :(";
                 }
             }
@@ -50,7 +50,7 @@ class Repo {
             "Salix" : "Official Salix package repository",
             "Slackware-Extra" : "Extra Slackware package repository",
             "Extra" : "Extra Salix package repository"
-        }
+        };
         return descriptions[this.name];
     }
 

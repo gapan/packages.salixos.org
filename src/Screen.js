@@ -32,12 +32,11 @@ class Screen {
     }
 
     showSearchBoxMessage(msg) {
-        document.getElementById('search').placeholder = msg;
-        document.getElementById('search').style.fontWeight = 'bold';
+        document.getElementById("search").placeholder = msg;
+        document.getElementById("search").style.fontWeight = "bold";
         // reset everything back to normal after 2 seconds
         setTimeout("document.getElementById('search').placeholder = 'Enter search term...';" +
-                    "document.getElementById('search').style.fontWeight = 'normal';",
-            2000);
+                    "document.getElementById('search').style.fontWeight = 'normal';", 2000);
     }
 
     updateProgressBar(version, arch) {
@@ -103,7 +102,7 @@ class Screen {
             // disables backspace on page except on input fields and textarea..
             document.body.onkeydown = function (e) {
                 var elm = e.target.nodeName.toLowerCase();
-                if (e.which === 8 && (elm !== 'input' && elm  !== 'textarea')) {
+                if (e.which === 8 && (elm !== "input" && elm  !== "textarea")) {
                     e.preventDefault();
                 }
                 // stopping event bubbling up the DOM tree..
