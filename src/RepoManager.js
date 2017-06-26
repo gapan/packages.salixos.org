@@ -50,6 +50,8 @@ class RepoManager {
         let arch = document.getElementById("browse-arch").value;
         let otherVersion = document.getElementById("search-ver");
         let otherArch = document.getElementById("search-arch");
+        localStorage.setItem("version", version);
+        localStorage.setItem("arch", arch);
         this.syncRepoSelections(version, arch, otherVersion, otherArch);
     }
 
