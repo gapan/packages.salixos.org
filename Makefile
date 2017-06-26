@@ -23,5 +23,7 @@ upload: js
 		--exclude Makefile \
 		--exclude TODO \
 		--exclude src \
+		--exclude "*~" \
+		--delete-excluded \
 		--delete ./ $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
 
