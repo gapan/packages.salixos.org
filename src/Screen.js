@@ -11,14 +11,14 @@ class Screen {
         document.getElementById(elem).scrollIntoView({block: "start", behavior: "smooth"});
     }
 
-    showSlide(slide) {
+    showSlide(slide, scroll=true) {
         let slides = document.getElementsByClassName("slide");
         // first hide all slides
         for (let i = 0; i < slides.length; i++)
             document.getElementById(slides[i].id).setAttribute("style", "display: none");
         // then show the one we want
         document.getElementById(slide).setAttribute("style", "display: block");
-        this.scrollToId(slide);
+        if (scroll) this.scrollToId(slide);
     }
     
     /*

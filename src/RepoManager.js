@@ -73,5 +73,7 @@ class RepoManager {
             this.repoStore[version + arch] = new RepoList(version, arch);
         }
         spkg.repoList = this.repoStore[version + arch];
+        // when we switch repos, move the lower screen to the main browse page
+        spkg.screen.showSlide("slide-browse-main", false);
     }
 }
