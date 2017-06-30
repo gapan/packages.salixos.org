@@ -22,5 +22,49 @@ document.getElementById("search").onkeypress=function(e){
     return true;
 };
 
+// add events
+document.getElementById("submit").addEventListener("click", function() {
+    spkg.action.pkgSearch();
+});
+document.getElementById("search-ver").addEventListener("change", function() {
+    spkg.repoManager.setRepoFromSearchPage();
+});
+document.getElementById("search-arch").addEventListener("change", function() {
+    spkg.repoManager.setRepoFromSearchPage();
+});
+document.getElementById("down-arrow").addEventListener("click", function() {
+    spkg.screen.scrollToId("screen-lower");
+});
+document.getElementById("up-arrow").addEventListener("click", function() {
+    spkg.screen.scrollUp();
+});
+document.getElementById("browse-ver").addEventListener("click", function() {
+    spkg.repoManager.setRepoFromBrowsePage();
+});
+document.getElementById("browse-arch").addEventListener("change", function() {
+    spkg.repoManager.setRepoFromBrowsePage();
+});
+document.getElementById("browsebtn").addEventListener("click", function() {
+    spkg.action.browseRepoList();
+});
+document.getElementById("left-arrow-browse-repo").addEventListener("click", function() {
+    spkg.screen.showSlide("slide-browse-main");
+});
+document.getElementById("left-arrow-browse-location").addEventListener("click", function() {
+    spkg.screen.showSlide("slide-browse-repo");
+});
+document.getElementById("left-arrow-browse-package").addEventListener("click", function() {
+    spkg.screen.showSlide("slide-browse-location");
+});
+document.getElementById("left-arrow-search-repo").addEventListener("click", function() {
+    spkg.screen.showSlide("slide-browse-main");
+});
+document.getElementById("left-arrow-browse-details").addEventListener("click", function() {
+    spkg.screen.showSlide("slide-browse-package");
+});
+document.getElementById("left-arrow-search-details").addEventListener("click", function() {
+    spkg.screen.showSlide("slide-search-results");
+});
+
 // browser back button moves the screen to the top part
 spkg.screen.noBackButton(window);
