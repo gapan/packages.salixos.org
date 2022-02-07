@@ -5,7 +5,7 @@ SSH_TARGET_DIR=/srv/www/packages.salixos.org
 
 .PHONY: js
 js:
-	babel -o pkg.js \
+	npx babel -o pkg.js \
 		src/Screen.js \
 		src/Repo.js \
 		src/RepoList.js \
@@ -23,6 +23,7 @@ upload: js
 		--exclude Makefile \
 		--exclude TODO \
 		--exclude src \
+		--exclude node_modules \
 		--exclude "*~" \
 		--delete-excluded \
 		--delete ./ $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
