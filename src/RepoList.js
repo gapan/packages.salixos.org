@@ -12,7 +12,7 @@ class RepoList {
         this.mirror = "https://download.salixos.org/";
         this.repoNames = ["Salix", "Slackware", "Slackware-Extra"];
         // only 14.2 has the Extra repo
-        if (this.version === "14.2") {
+        if (this.version === "14.2" || this.version === "15.0") {
             this.repoNames.push("Extra");
         }
         // loading a new repo, so show the progress bar
