@@ -209,6 +209,9 @@ class Action {
                         iHTML += pkg.sizec + "</p></div>";
                         iHTML += "<div class=\"info\"><h1>Installed Size:</h1><p>";
                         iHTML += pkg.sizeu + "</p></div>";
+                        iHTML += "<div class=\"download\"><p><a href=\"";
+						iHTML += spkg.repoList.getURL(reponame) + pkg.path + "\">Download</a> <a href=\"";
+						iHTML += spkg.repoList.getURL(reponame) + pkg.source + "\">Source</a></p></div>";
                         iHTML += "<div class=\"info\"><h1>Description:</h1>";
                         iHTML += "<div class=\"text\"><p>";
                         iHTML += pkg.descs + "</p><p>";

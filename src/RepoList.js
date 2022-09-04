@@ -21,7 +21,7 @@ class RepoList {
         this.repos = [];
         for (let i = 0; i < this.repoNames.length; i++) {
             let repoName = this.repoNames[i];
-            this.repos.push(new Repo(repoName, this.getURL(repoName), this.version, this.arch));
+            this.repos.push(new Repo(repoName, this.getJSONURL(repoName), this.version, this.arch));
         }
     }
 
@@ -36,9 +36,12 @@ class RepoList {
         } else if (repo === "Extra") {
             url += "extra-" + this.version;
         }
-        url += "/PACKAGES.json";
-        return url;
+        return url + '/';
     }
+
+	getJSONURL(repo) {
+		return this.getURL(repo) + "PACKAGES.json";
+	}
 
     isReady() {
         if (this.getNumberOfReadyRepos() === this.repos.length) {
