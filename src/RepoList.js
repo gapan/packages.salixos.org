@@ -15,6 +15,10 @@ class RepoList {
         if (this.version === "14.2" || this.version === "15.0") {
             this.repoNames.push("Extra");
         }
+        // and only 15.0 has the xfce4.18 repo
+        if (this.version === "15.0") {
+            this.repoNames.push("Xfce-4.18");
+        }
         // loading a new repo, so show the progress bar
         spkg.screen.showProgressBar();
         // now load the repo data
@@ -35,6 +39,8 @@ class RepoList {
             url += "slackware-" + this.version + "/extra";
         } else if (repo === "Extra") {
             url += "extra-" + this.version;
+        } else if (repo === "Xfce-4.18") {
+            url += "xfce4.18-" + this.version;
         }
         return url + '/';
     }
