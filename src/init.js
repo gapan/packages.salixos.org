@@ -32,7 +32,7 @@ document.getElementById("search-ver").addEventListener("change", function() {
 document.getElementById("search-arch").addEventListener("change", function() {
     spkg.repoManager.setRepoFromSearchPage();
 });
-document.getElementById("down-arrow").addEventListener("click", function() {
+document.getElementById("button-browse").addEventListener("click", function() {
     spkg.screen.scrollToId("screen-lower");
 });
 document.getElementById("up-arrow").addEventListener("click", function() {

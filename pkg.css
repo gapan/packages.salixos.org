@@ -105,6 +105,9 @@ body {
     cursor: pointer;
     width: 140px;
     height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button:hover {
@@ -409,9 +412,12 @@ input {
     width: 22px;
 }
 
-#down-arrow {
-    bottom: 5px;
-    right: 5px;
+#button-browse {
+    right: 0;
+    left: 0;
+    margin: auto;
+    margin-top: 40px;
+    position: absolute;
 }
 
 #up-arrow {
