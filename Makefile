@@ -27,11 +27,11 @@ js: make_dist_dir
 
 .PHONY: css
 css: make_dist_dir
-	npx minify site.css > $(DIST_DIR)/site.css
+	npx minify src/site.css > $(DIST_DIR)/site.css
 
 .PHONY: html
 html: make_dist_dir
-	npx minify index.html > $(DIST_DIR)/index.html
+	npx minify src/index.html > $(DIST_DIR)/index.html
 
 .PHONY: clean
 clean:
