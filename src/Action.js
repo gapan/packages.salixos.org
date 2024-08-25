@@ -271,8 +271,8 @@ class Action {
     }
 
     viewDep(name, arch, version) {
-        // Package search priority is Salix -> Extra -> Slackware -> Slackware-Extra
-        let repos = ["Salix", "Extra", "Slackware", "Slackware-Extra"];
+        // Package search priority is Salix -> Xfce-4.18 -> Extra -> Slackware -> Slackware-Extra
+        let repos = ["Salix", "Xfce-4.18", "Extra", "Slackware", "Slackware-Extra"];
         for (let repoName of repos) {
             let repo = spkg.repoList.getRepo(repoName);
             if (repo) {
