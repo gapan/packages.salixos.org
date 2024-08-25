@@ -49,7 +49,8 @@ class Repo {
             "Slackware" : "Official Slackware repository (with dependency information)",
             "Salix" : "Official Salix package repository",
             "Slackware-Extra" : "Extra Slackware package repository",
-            "Extra" : "Extra Salix package repository"
+            "Extra" : "Extra Salix package repository",
+            "Xfce-4.18" : "Xfce 4.18 repository"
         };
         return descriptions[this.name];
     }
