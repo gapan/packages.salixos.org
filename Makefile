@@ -28,3 +28,6 @@ upload: js
 		--delete-excluded \
 		--delete ./ $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
 
+.PHONY: serve
+serve:
+	docker run --rm -p 3001:80 --name packages.salixos.org -v $$(pwd):/usr/share/nginx/html:ro nginx:stable-alpine
