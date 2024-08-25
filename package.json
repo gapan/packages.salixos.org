@@ -1,8 +1,7 @@
 {
-  "dependencies": {
-    "babel-preset-env": "^1.7.0"
-  },
   "devDependencies": {
-    "babel-cli": "^6.26.0"
+    "@babel/cli": "^7.24.8",
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4"
   }
 }
