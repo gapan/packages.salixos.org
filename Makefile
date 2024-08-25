@@ -2,6 +2,7 @@ SSH_HOST=salixos.org
 SSH_PORT=22
 SSH_USER=web
 SSH_TARGET_DIR=/srv/www/packages.salixos.org
+NGINX_PORT ?= 3001
 
 .PHONY: js
 js:
@@ -30,4 +31,4 @@ upload: js
 
 .PHONY: serve
 serve:
-	docker run --rm -p 3001:80 --name packages.salixos.org -v $$(pwd):/usr/share/nginx/html:ro nginx:stable-alpine
+	docker run --rm -p $(NGINX_PORT):80 --name packages.salixos.org -v $$(pwd):/usr/share/nginx/html:ro nginx:stable-alpine
