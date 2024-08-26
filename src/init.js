@@ -40,7 +40,7 @@ document.getElementById("button-search").addEventListener("click", function() {
     spkg.screen.showStartScreen();
 });
 document.getElementById("up-arrow").addEventListener("click", function() {
-    spkg.screen.showStartScreen()
+    spkg.screen.showStartScreen();
 });
 document.getElementById("browse-ver").addEventListener("click", function() {
     spkg.repoManager.setRepoFromBrowsePage();
