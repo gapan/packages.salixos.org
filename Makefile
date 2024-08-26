@@ -11,12 +11,8 @@ all: clean js css html
 	cp -r fonts $(DIST_DIR)/
 	cp -r img $(DIST_DIR)/
 
-.PHONY: make_dist_dir
-make_dist_dir:
-	mkdir -p $(DIST_DIR)
-
 .PHONY: js
-js: make_dist_dir
+js:
 	npx babel -o $(DIST_DIR)/site.js \
 		src/Screen.js \
 		src/Repo.js \
@@ -26,16 +22,16 @@ js: make_dist_dir
 		src/init.js
 
 .PHONY: css
-css: make_dist_dir
+css:
 	npx minify src/site.css > $(DIST_DIR)/site.css
 
 .PHONY: html
-html: make_dist_dir
+html:
 	npx minify src/index.html > $(DIST_DIR)/index.html
 
 .PHONY: clean
 clean:
-	rm -rf dist
+	rm -rf dist/*
 
 .PHONY: upload
 upload: all
