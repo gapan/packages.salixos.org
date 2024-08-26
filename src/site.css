@@ -218,6 +218,7 @@ input {
 #screen-lower {
     background-color: #cf9;
     min-height: 100vh;
+    display: none;
 }
 
 #screen-lower #browsebtn {

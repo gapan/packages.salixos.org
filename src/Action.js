@@ -70,7 +70,7 @@ class Action {
         }
         searchResults.innerHTML = iHTML;
         spkg.screen.showSlide("slide-search-results");
-        spkg.screen.scrollToId("screen-lower");
+        spkg.screen.showResultsScreen();
     }
 
     /* Executed when clicking the Browse button

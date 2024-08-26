@@ -33,10 +33,11 @@ document.getElementById("search-arch").addEventListener("change", function() {
     spkg.repoManager.setRepoFromSearchPage();
 });
 document.getElementById("button-browse").addEventListener("click", function() {
-    spkg.screen.scrollToId("screen-lower");
+    spkg.screen.showSlide("slide-browse-main");
+    spkg.screen.showResultsScreen();
 });
 document.getElementById("up-arrow").addEventListener("click", function() {
-    spkg.screen.scrollUp();
+    spkg.screen.showStartScreen()
 });
 document.getElementById("browse-ver").addEventListener("click", function() {
     spkg.repoManager.setRepoFromBrowsePage();
