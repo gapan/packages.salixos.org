@@ -36,6 +36,9 @@ document.getElementById("button-browse").addEventListener("click", function() {
     spkg.screen.showSlide("slide-browse-main");
     spkg.screen.showResultsScreen();
 });
+document.getElementById("button-search").addEventListener("click", function() {
+    spkg.screen.showStartScreen();
+});
 document.getElementById("up-arrow").addEventListener("click", function() {
     spkg.screen.showStartScreen()
 });
