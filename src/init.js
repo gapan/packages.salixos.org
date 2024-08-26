@@ -66,6 +66,3 @@ document.getElementById("left-arrow-browse-details").addEventListener("click", f
 document.getElementById("left-arrow-search-details").addEventListener("click", function() {
     spkg.screen.showSlide("slide-search-results");
 });
-
-// browser back button moves the screen to the top part
-spkg.screen.noBackButton(window);
