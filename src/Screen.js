@@ -65,7 +65,7 @@ class Screen {
     showProgressBar() {
         document.getElementById("searchprogressbox").style.display = "inline-flex";
         document.getElementById("searchbox").style.display = "none";
-        document.getElementById("browseprogressbox").style.display = "block";
+        document.getElementById("browseprogressbox").style.display = "flex";
         document.getElementById("browsebtn").style.display = "none";
     }
 
@@ -73,7 +73,7 @@ class Screen {
         document.getElementById("searchprogressbox").style.display = "none";
         document.getElementById("searchbox").style.display = "inline-flex";
         document.getElementById("browseprogressbox").style.display = "none";
-        document.getElementById("browsebtn").style.display = "block";
+        document.getElementById("browsebtn").style.display = "flex";
         // when hiding the progress bar, set it back to the start
         document.querySelector("#searchprogressbox em").innerHTML = "0%";
         document.querySelector("#browseprogressbox em").innerHTML = "0%";
