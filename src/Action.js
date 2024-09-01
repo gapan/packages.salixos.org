@@ -77,8 +77,8 @@ class Action {
     * on the main browse page */
     browseRepoList() {
         let repoListElm = document.getElementById("repo-list");
-        let version = document.getElementById("browse-ver").value;
-        let arch = document.getElementById("browse-arch").value;
+        let version = document.getElementById("search-ver").value;
+        let arch = document.getElementById("search-arch").value;
         if (!spkg.repoList.isReady()) {
             spkg.screen.showSearchBoxMessage("Oops! Data not downloaded yet!");
             return;

@@ -49,15 +49,12 @@ class Screen {
             if (spkg.repoList.isReady()) {
                 this.hideProgressBar();
             } else {
-                let progressbar1 = document.getElementById("searchprogress");
-                let progressbar2 = document.getElementById("searchprogress");
+                let progressbar = document.getElementById("searchprogress");
                 let totalRepos = spkg.repoList.repoNames.length;
                 let readyRepos = spkg.repoList.getNumberOfReadyRepos();
                 let width = Math.round(100 * readyRepos / totalRepos) + "%";
-                progressbar1.style.width = width;
-                progressbar2.style.width = width;
+                progressbar.style.width = width;
                 document.querySelector("#searchprogressbox em").innerHTML = width;
-                document.querySelector("#browseprogressbox em").innerHTML = width;
             }
         }
     }
@@ -65,17 +62,12 @@ class Screen {
     showProgressBar() {
         document.getElementById("searchprogressbox").style.display = "inline-flex";
         document.getElementById("searchbox").style.display = "none";
-        document.getElementById("browseprogressbox").style.display = "flex";
-        document.getElementById("browsebtn").style.display = "none";
     }
 
     hideProgressBar() {
         document.getElementById("searchprogressbox").style.display = "none";
         document.getElementById("searchbox").style.display = "inline-flex";
-        document.getElementById("browseprogressbox").style.display = "none";
-        document.getElementById("browsebtn").style.display = "flex";
         // when hiding the progress bar, set it back to the start
         document.querySelector("#searchprogressbox em").innerHTML = "0%";
-        document.querySelector("#browseprogressbox em").innerHTML = "0%";
     }
 }

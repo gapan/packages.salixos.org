@@ -33,35 +33,18 @@ document.getElementById("search-arch").addEventListener("change", function() {
     spkg.repoManager.setRepoFromSearchPage();
 });
 document.getElementById("button-browse").addEventListener("click", function() {
-    spkg.screen.showSlide("slide-browse-main");
+    spkg.action.browseRepoList();
+    spkg.screen.showSlide("slide-browse-repo");
     spkg.screen.showResultsScreen();
 });
-document.getElementById("button-search").addEventListener("click", function() {
+document.getElementById("button-go-to-search").addEventListener("click", function() {
     spkg.screen.showStartScreen();
-});
-document.getElementById("up-arrow").addEventListener("click", function() {
-    spkg.screen.showStartScreen();
-});
-document.getElementById("browse-ver").addEventListener("click", function() {
-    spkg.repoManager.setRepoFromBrowsePage();
-});
-document.getElementById("browse-arch").addEventListener("change", function() {
-    spkg.repoManager.setRepoFromBrowsePage();
-});
-document.getElementById("browsebtn").addEventListener("click", function() {
-    spkg.action.browseRepoList();
-});
-document.getElementById("left-arrow-browse-repo").addEventListener("click", function() {
-    spkg.screen.showSlide("slide-browse-main");
 });
 document.getElementById("left-arrow-browse-location").addEventListener("click", function() {
     spkg.screen.showSlide("slide-browse-repo");
 });
 document.getElementById("left-arrow-browse-package").addEventListener("click", function() {
     spkg.screen.showSlide("slide-browse-location");
-});
-document.getElementById("left-arrow-search-repo").addEventListener("click", function() {
-    spkg.screen.showSlide("slide-browse-main");
 });
 document.getElementById("left-arrow-browse-details").addEventListener("click", function() {
     spkg.screen.showSlide("slide-browse-package");

@@ -41,8 +41,7 @@ body {
 
 
 /* These are the two shown by default */
-#search-items,
-#slide-browse-main {
+#search-items {
     display: block;
 }
 
@@ -413,25 +412,36 @@ input {
     width: 22px;
 }
 
+#button-go-to-search {
+    height: 20px;
+    width: 20px;
+    top: 5px;
+    right: 5px;
+    background-color: #6c6;
+    background-image: url("img/search.svg");
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-position: 50% 50%;
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+    border-radius: 100%;
+    -webkit-transition: all .15s ease-out;
+    -moz-transition: all .15s ease-out;
+    transition: all .15s ease-out;
+}
+
+#button-go-to-search:hover {
+    height: 22px;
+    width: 22px;
+}
+
 #button-browse {
     right: 0;
     left: 0;
     margin: auto;
     margin-top: 40px;
     position: absolute;
-}
-
-#up-arrow {
-    top: 5px;
-    right: 5px;
-    transform: rotate(180deg);
-}
-
-#button-search {
-    right: 0;
-    left: 0;
-    margin: auto;
-    margin-top: 40px;
 }
 
 .left-arrow {
@@ -448,6 +458,17 @@ input {
     }
 
     .arrow:hover {
+        height: 42px;
+        width: 42px;
+    }
+    
+    #button-go-to-search {
+        height: 40px;
+        width: 40px;
+        background-size: 20px;
+    }
+
+    #button-go-to-search:hover {
         height: 42px;
         width: 42px;
     }
@@ -536,6 +557,17 @@ input {
     }
 
     .arrow:hover {
+        height: 22px;
+        width: 22px;
+    }
+    
+    #button-go-to-search {
+        height: 20px;
+        width: 20px;
+        background-size: 10px;
+    }
+
+    #button-go-to-search:hover {
         height: 22px;
         width: 22px;
     }
