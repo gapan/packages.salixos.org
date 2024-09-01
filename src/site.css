@@ -442,6 +442,7 @@ input {
     margin: auto;
     margin-top: 40px;
     position: absolute;
+    display: none;
 }
 
 .left-arrow {
