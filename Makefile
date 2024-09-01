@@ -10,6 +10,7 @@ DIST_DIR=dist
 all: clean js css html
 	cp -r fonts $(DIST_DIR)/
 	cp -r img $(DIST_DIR)/
+	cp favicon/* $(DIST_DIR)/
 
 .PHONY: js
 js:
