@@ -7,16 +7,16 @@
         <meta name="keywords" content="Salix,Slackware,Linux,packages,repositories,tgz,txz">
         <meta name="author" content="George Vlahavas">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="pkg.css">
+        <link rel="stylesheet" href="site.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
     </head>
-    <body onload="spkg.screen.scrollUp()">
+    <body onload="spkg.screen.clearSearchBox()">
         <div id="content">
             <div id="screen-upper" class="screen">
                 <div id="search-items">
                     <div class="logo-header">
                         <div class="edgespace"></div>
-                        <a href="http://www.salixos.org">
+                        <a href="https://www.salixos.org">
                             <div class="logo"></div>
                         </a>
                         <p class="title">Salix Package Search</p>
@@ -55,54 +55,12 @@
                             <div class="edgespace"></div>
                         </div>
                     </form>
-                    <div id="down-arrow" class="arrow"></div>
+                    <div id="button-browse" class="button">Browse packages</div>
                 </div>
             </div>
             <div id="screen-lower" class="screen">
-                <div id="up-arrow" class="arrow"></div>
-                <div id="slide-browse-main" class="slide">
-                    <div class="logo-header">
-                        <div class="edgespace"></div>
-                        <div class="logo"></div>
-                        <p class="title">Browse Salix Repositories</p>
-                        <div class="edgespace"></div>
-                    </div>
-                    <form>
-                        <div class=options>
-                            <div class="edgespace"></div>
-                            <div class="select">
-                                <p>Version:</p>
-                                <select id="browse-ver" name="ver">
-                                    <option value="15.0">15.0</option>
-                                    <option value="14.2">14.2</option>
-                                    <option value="14.1">14.1</option>
-                                    <option value="14.0">14.0</option>
-                                </select>
-                            </div>
-                            <div class="midspace"></div>
-                            <div class="select">
-                                <p>Architecture:</p>
-                                <select id="browse-arch" name="arch">
-                                    <option value="x86_64">x86_64</option>
-                                    <option value="i486">i486</option>
-                                </select>
-                            </div>
-                            <div class="midspace"></div>
-                            <div id="browsebtn">
-                                <input class="button"
-                                    type="button" value="Browse">
-                            </div>
-                            <div id="browseprogressbox">
-                                <p><em>0%</em></p>
-                                <div id="browseprogress"></div>
-                            </div>
-                            <div class="edgespace"></div>
-                        </div>
-                    </form>
-                </div>
+                <div id="button-go-to-search" title="Back to Search"></div>
                 <div id="slide-browse-repo" class="slide">
-                    <div id="left-arrow-browse-repo" class="arrow left-arrow">
-                    </div>
                     <div class="logo-header">
                         <div class="edgespace"></div>
                         <p class="title">Select Repository</p>
@@ -113,7 +71,7 @@
                     </div>
                 </div>
                 <div id="slide-browse-location" class="slide">
-                    <div id="left-arrow-browse-location" class="arrow left-arrow">
+                    <div id="left-arrow-browse-location" class="arrow left-arrow" title="Back to Repository Selection">
                     </div>
                     <div class="logo-header">
                         <div class="edgespace"></div>
@@ -125,7 +83,7 @@
                     </div>
                 </div>
                 <div id="slide-browse-package" class="slide">
-                    <div id="left-arrow-browse-package" class="arrow left-arrow">
+                    <div id="left-arrow-browse-package" class="arrow left-arrow" title="Back to Location Selection">
                     </div>
                     <div class="logo-header">
                         <div class="edgespace"></div>
@@ -137,8 +95,6 @@
                     </div>
                 </div>
                 <div id="slide-search-results" class="slide">
-                    <div id="left-arrow-search-repo" class="arrow left-arrow">
-                    </div>
                     <div class="logo-header">
                         <div class="edgespace"></div>
                         <p class="title">Package Search Results</p>
@@ -149,7 +105,7 @@
                     </div>
                 </div>
                 <div id="slide-browse-details" class="slide slide-details">
-                    <div id="left-arrow-browse-details" class="arrow left-arrow">
+                    <div id="left-arrow-browse-details" class="arrow left-arrow" title="Back to Package Selection">
                     </div>
                     <div class="logo-header">
                         <div class="edgespace"></div>
@@ -163,7 +119,7 @@
                     </div>
                 </div>
                 <div id="slide-search-details" class="slide slide-details">
-                    <div id="left-arrow-search-details" class="arrow left-arrow">
+                    <div id="left-arrow-search-details" class="arrow left-arrow" title="Back to Search Results">
                     </div>
                     <div class="logo-header">
                         <div class="edgespace"></div>
@@ -178,6 +134,6 @@
                 </div>
             </div>
         </div>
-        <script src="pkg.js" type="text/javascript"></script>
+        <script src="site.js" type="text/javascript"></script>
     </body>
 </html>

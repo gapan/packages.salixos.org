@@ -70,15 +70,15 @@ class Action {
         }
         searchResults.innerHTML = iHTML;
         spkg.screen.showSlide("slide-search-results");
-        spkg.screen.scrollToId("screen-lower");
+        spkg.screen.showResultsScreen();
     }
 
     /* Executed when clicking the Browse button
     * on the main browse page */
     browseRepoList() {
         let repoListElm = document.getElementById("repo-list");
-        let version = document.getElementById("browse-ver").value;
-        let arch = document.getElementById("browse-arch").value;
+        let version = document.getElementById("search-ver").value;
+        let arch = document.getElementById("search-arch").value;
         if (!spkg.repoList.isReady()) {
             spkg.screen.showSearchBoxMessage("Oops! Data not downloaded yet!");
             return;
@@ -210,8 +210,10 @@ class Action {
                         iHTML += "<div class=\"info\"><h1>Installed Size:</h1><p>";
                         iHTML += pkg.sizeu + "</p></div>";
                         iHTML += "<div class=\"download\"><p><a href=\"";
-						iHTML += spkg.repoList.getURL(reponame) + pkg.path + "\">Download</a> <a href=\"";
-						iHTML += spkg.repoList.getURL(reponame) + pkg.source + "\">Source</a></p></div>";
+                        iHTML += spkg.repoList.getURL(reponame) + pkg.path + "\" type=\"application/octet-stream\" download>Download</a> <a href=\"";
+                        iHTML += spkg.repoList.getURL(reponame) + pkg.source + "\">Source</a></p>";
+                        iHTML += "<div class=\"text\"><p><i>Right click on the Download link and select Save as...</i></p></div>";
+                        iHTML += "</div>";
                         iHTML += "<div class=\"info\"><h1>Description:</h1>";
                         iHTML += "<div class=\"text\"><p>";
                         iHTML += pkg.descs + "</p><p>";
@@ -271,8 +273,8 @@ class Action {
     }
 
     viewDep(name, arch, version) {
-        // Package search priority is Salix -> Extra -> Slackware -> Slackware-Extra
-        let repos = ["Salix", "Extra", "Slackware", "Slackware-Extra"];
+        // Package search priority is Salix -> Xfce-4.18 -> Extra -> Slackware -> Slackware-Extra
+        let repos = ["Salix", "Xfce-4.18", "Extra", "Slackware", "Slackware-Extra"];
         for (let repoName of repos) {
             let repo = spkg.repoList.getRepo(repoName);
             if (repo) {

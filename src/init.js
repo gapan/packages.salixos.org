@@ -32,23 +32,13 @@ document.getElementById("search-ver").addEventListener("change", function() {
 document.getElementById("search-arch").addEventListener("change", function() {
     spkg.repoManager.setRepoFromSearchPage();
 });
-document.getElementById("down-arrow").addEventListener("click", function() {
-    spkg.screen.scrollToId("screen-lower");
-});
-document.getElementById("up-arrow").addEventListener("click", function() {
-    spkg.screen.scrollUp();
-});
-document.getElementById("browse-ver").addEventListener("click", function() {
-    spkg.repoManager.setRepoFromBrowsePage();
-});
-document.getElementById("browse-arch").addEventListener("change", function() {
-    spkg.repoManager.setRepoFromBrowsePage();
-});
-document.getElementById("browsebtn").addEventListener("click", function() {
+document.getElementById("button-browse").addEventListener("click", function() {
     spkg.action.browseRepoList();
+    spkg.screen.showSlide("slide-browse-repo");
+    spkg.screen.showResultsScreen();
 });
-document.getElementById("left-arrow-browse-repo").addEventListener("click", function() {
-    spkg.screen.showSlide("slide-browse-main");
+document.getElementById("button-go-to-search").addEventListener("click", function() {
+    spkg.screen.showStartScreen();
 });
 document.getElementById("left-arrow-browse-location").addEventListener("click", function() {
     spkg.screen.showSlide("slide-browse-repo");
@@ -56,15 +46,9 @@ document.getElementById("left-arrow-browse-location").addEventListener("click", 
 document.getElementById("left-arrow-browse-package").addEventListener("click", function() {
     spkg.screen.showSlide("slide-browse-location");
 });
-document.getElementById("left-arrow-search-repo").addEventListener("click", function() {
-    spkg.screen.showSlide("slide-browse-main");
-});
 document.getElementById("left-arrow-browse-details").addEventListener("click", function() {
     spkg.screen.showSlide("slide-browse-package");
 });
 document.getElementById("left-arrow-search-details").addEventListener("click", function() {
     spkg.screen.showSlide("slide-search-results");
 });
-
-// browser back button moves the screen to the top part
-spkg.screen.noBackButton(window);
