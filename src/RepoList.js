@@ -45,9 +45,9 @@ class RepoList {
         return url + '/';
     }
 
-	getJSONURL(repo) {
-		return this.getURL(repo) + "PACKAGES.json";
-	}
+    getJSONURL(repo) {
+        return this.getURL(repo) + "PACKAGES.json";
+    }
 
     isReady() {
         if (this.getNumberOfReadyRepos() === this.repos.length) {
