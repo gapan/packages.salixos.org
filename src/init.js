@@ -1,3 +1,4 @@
+// vim:et:sta:sts=4:sw=4:ts=8:tw=79:
 
 /*
  * This acts as an entry point for the web app, setting everything up.

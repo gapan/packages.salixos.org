@@ -1,3 +1,4 @@
+// vim:et:sta:sts=4:sw=4:ts=8:tw=79:
 
 /*
  * The Repo class represents a single repository and the data it contains.

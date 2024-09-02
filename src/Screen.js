@@ -1,3 +1,4 @@
+// vim:et:sta:sts=4:sw=4:ts=8:tw=79:
 
 /*
  * The Screen class is used to manage movement between different slides in the
