@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100mm"
+   height="100mm"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="search.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.74920735"
+     inkscape:cx="394.41685"
+     inkscape:cy="239.58654"
+     inkscape:window-width="1891"
+     inkscape:window-height="1049"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Στρώση 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#ffffff;stroke-width:0.487975"
+       d="M 86.720075,95.110405 C 84.554902,94.611834 82.638952,92.959027 72.986664,83.263167 l -8.452541,-8.490714 -3.502856,1.82657 C 54.746241,79.876369 51.165721,80.706317 43.377134,80.691196 37.635462,80.68013 35.96156,80.497435 32.885663,79.546624 19.161179,75.30418 9.2297176,64.885258 5.9891236,51.329932 4.4664372,44.96065 4.8321099,36.498613 6.8858305,30.578995 12.484918,14.440259 26.60676,4.2518709 43.377134,4.2518709 c 17.95828,0 32.936918,11.7638411 37.387402,29.3630991 0.881768,3.486893 1.003917,5.073286 0.806557,10.474102 -0.259957,7.113298 -1.445244,11.596667 -4.5292,17.131714 l -1.648838,2.959284 9.521545,9.484092 c 5.236845,5.216248 9.836166,10.077056 10.220724,10.801793 2.823705,5.321642 -2.467179,12.014104 -8.415249,10.64445 z M 52.985582,70.268522 C 61.458522,67.445411 68.782581,59.831763 71.577145,50.94187 73.189447,45.812918 73.055328,38.628017 71.249539,33.393356 67.297371,21.936602 57.202687,14.109372 45.329048,13.295073 31.872451,12.372214 18.985766,21.409052 15.152741,34.456338 c -5.016689,17.076353 7.265059,35.463768 24.80857,37.141765 4.601792,0.44015 9.087042,-0.01771 13.024271,-1.329581 z"
+       id="path918" />
+  </g>
+</svg>
