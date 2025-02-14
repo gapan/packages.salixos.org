@@ -32,7 +32,7 @@ html:
 
 .PHONY: clean
 clean:
-	rm -rf dist/*
+	rm -rf $(DIST_DIR)/*
 
 .PHONY: upload
 upload: all
