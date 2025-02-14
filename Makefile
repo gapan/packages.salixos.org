@@ -6,8 +6,8 @@ NGINX_PORT ?= 3001
 
 DIST_DIR=dist
 
-.PHONY: all
-all: clean js css html
+.PHONY: build
+build: clean js css html
 	cp -r fonts $(DIST_DIR)/
 	cp -r img $(DIST_DIR)/
 	cp favicon/* $(DIST_DIR)/
@@ -35,7 +35,7 @@ clean:
 	rm -rf $(DIST_DIR)/*
 
 .PHONY: upload
-upload: all
+upload: build 
 	rsync -e "ssh -p $(SSH_PORT)" \
 		-avz \
 		--delete $(DIST_DIR)/ \
@@ -47,3 +47,9 @@ serve:
 		--name packages.salixos.org \
 		-v $$(pwd)/dist:/usr/share/nginx/html:ro \
 		nginx:stable-alpine
+
+publish: build
+	cd dist && \
+	git add --all && \
+	git commit -m "Publish on `LANG=C.utf8 date`" && \
+	git push -u origin dist
