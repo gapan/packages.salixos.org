@@ -3,14 +3,25 @@ SSH_PORT=22
 SSH_USER=web
 SSH_TARGET_DIR=/srv/www/packages.salixos.org
 NGINX_PORT ?= 3001
+GIT_PUBLISH_BRANCH=dist
 
 DIST_DIR=dist
 
 .PHONY: build
-build: clean js css html
+build: clean
+	rm -rf dist
+	mkdir dist
+	git worktree prune
+	rm -rf .git/worktrees/dist/
+	git worktree add -B dist dist origin/$(GIT_PUBLISH_BRANCH)
+	rm -rf dist/*
+	$(MAKE) js
+	$(MAKE) css
+	$(MAKE) html
 	cp -r fonts $(DIST_DIR)/
 	cp -r img $(DIST_DIR)/
 	cp favicon/* $(DIST_DIR)/
+	touch dist/.nojekyll dist/.keep
 
 .PHONY: js
 js:
@@ -35,7 +46,7 @@ clean:
 	rm -rf $(DIST_DIR)/*
 
 .PHONY: upload
-upload: build 
+upload: build
 	rsync -e "ssh -p $(SSH_PORT)" \
 		-avz \
 		--delete $(DIST_DIR)/ \
